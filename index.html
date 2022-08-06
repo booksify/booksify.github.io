@@ -98,9 +98,10 @@
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a class="btn btn-primary" data-toggle="modal" data-target="#helps&faqsmodaldeskptop" class="flex-c-m trans-04 p-lr-25">
+		<a class="btn btn-primary" data-toggle="modal" data-target="#myaccountmodaldeskptop" class="flex-c-m trans-04 p-lr-25">
 							Help & FAQs
 						</a>
+
 
 			
 
@@ -125,27 +126,7 @@
 			<div class="wrap-menu-desktop">
 
 
-<!-- HELPS & FAQS Modal Desktop -->
 
-<div class="modal fade" id="helps&faqsmodaldeskptop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Helps & FAQs</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Coming Soon...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 					
 
 <!-- My Account Modal Desktop -->
@@ -154,7 +135,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">My Account</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Coming Soon</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -164,11 +145,87 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>
 </div>
+
+
+<div class="modal fade" id="shoppingcartmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"style="background-color: whitesmoke;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Checkout</h5><hr>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <!--  Shopping cart table wrapper  -->
+		<div id="shopping-cart">
+			<div class="txt-heading">
+				<h1>Shopping cart</h1>
+			</div>
+			<button onClick="emptyCart()" id="btnEmpty" class="btn btn-primary">Empty Cart</button>
+			<form name=ShoppingList class="gform" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbyzvoa2NuEwSAmtS6f9fAfsWB1kV6pvJQrgOt2Y_Q/exec">
+
+			<table class="tbl-cart" cellpadding="10" cellspacing="1">
+				<thead>
+					<tr>
+						<th> Name </th>
+						<th class='text-right' width="10%" >Unit Price </th>
+						<th class='text-right' width="10%" > Quantity </th>
+						<th class='text-right' width="10%"> Sub Total </th>
+					</tr>
+				</thead>
+				<!--  Cart table to load data on "add to cart" action -->
+				<tbody id="cartTableBody">
+				</tbody>
+				<tfoot>
+					<tr>
+						<td class="text-right" >Total: </td>
+						<td id="itemCount" class="text-right" colspan="2"></td>
+						<td id="totalAmount" class="text-right"></td>
+					</tr>
+				</tfoot>
+			</table><hr>
+			<div class="userdetails">
+				<h1>Enter your Details</h1>
+							<input type="text" name="price" id="price">
+							<hr>
+							<textarea  name="orderedproductsdetails" id="orderedproductdetails" rows="4" cols="50"></textarea>
+							<hr>
+							<label for="name">Name:</label><br>
+							<input type="text" name="name" placeholder="Enter your name" ><br>
+							<label for="contact">Contact Number:</label><br>
+							<input  type="number" name="contact" placeholder="Enter your 10 digit mobile number" required maxlength="10" minlength="10"><br>
+							<label for="contact">Email Address:</label><br>
+							<input type="email" name="email" placeholder="Enter your email address" required ><br>
+							<label for="address">Address:</label><br>
+							<textarea name="address" placeholder="Enter your shipping address with PIN Code" rows="5" cols="50" required></textarea><br>
+							<label for="modeofpayment">Mode of Payment:</label>
+							<select name="modeofpayment" id="modeofpayment">
+								<option>Select your mode of Payment</option>
+								<option>UPI</option>
+								<option>Cash On Delivery</option>
+							</select>
+</div>
+			<button type="submit" class="btn btn-primary">Checkout</button>
+
+		</form>
+		</div>
+
+		<!-- Shooping Cart Ends here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Shopping Cart Modal Ends Here -->
+
 
 <!-- Modal ends here -->
 				
@@ -197,20 +254,20 @@
 								<a href="product.html">Shop</a>
 							</li>
 
-							<li class="label1" data-label1="hot">
-								<a href="order-page.html">Features</a>
+							<li class="label1" data-label1="E Books">
+								<a href="ebooks.html">Features</a>
 							</li>
 
-							<li>
-								<a href="blog.html">Blog</a>
-							</li>
+							<!-- <li>
+								<a href="product.html#contactus">My Cart</a>
+							</li> -->
 
 							<li>
 								<a href="about.html">About</a>
 							</li>
 
 							<li>
-								<a href="contact.html">Contact</a>
+								<a href="#contactus">Contact</a>
 							</li>
 						</ul>
 					</div>	
@@ -251,11 +308,11 @@
 				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
 					<i class="zmdi zmdi-search"></i>
 				</div>
-
-<!-- 				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+<!-- 
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
 					<i class="zmdi zmdi-shopping-cart"></i>
-				</div>
-
+				</div> -->
+<!-- 
 				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
 					<i class="zmdi zmdi-favorite-outline"></i>
 				</a> -->
@@ -275,13 +332,13 @@
 			<ul class="topbar-mobile">
 				<li>
 					<div class="left-top-bar">
-						Free shipping around 5km with order above &#8377; 100
+						Free shipping around 5km with order above &#8377; 70
 					</div>
 				</li>
 
 				<li>
 					<div class="right-top-bar flex-w h-full">
-						<a class="btn btn-primary" data-toggle="modal" data-target="#helps&faqsmodalmobile" class="flex-c-m p-lr-10 trans-04">
+						<a class="btn btn-primary" data-toggle="modal" data-target="#myaccountmodalmobile" class="flex-c-m p-lr-10 trans-04">
 							Help & FAQs
 						</a>
 
@@ -328,7 +385,7 @@
 					  <div class="modal-dialog" role="document">
 					    <div class="modal-content">
 					      <div class="modal-header">
-					        <h5 class="modal-title" id="exampleModalLabel">My Account</h5>
+					        <h5 class="modal-title" id="exampleModalLabel">Coming Soon</h5>
 					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					          <span aria-hidden="true">&times;</span>
 					        </button>
@@ -363,11 +420,11 @@
 				</li>
 
 				<li>
-					<a href="order-page.html" class="label1 rs1" data-label1="hot">Features</a>
+					<a href="ebooks.html" class="label1 rs1" data-label1="E Books">Features</a>
 				</li>
 
 				<li>
-					<a href="blog.html">Blog</a>
+					<a href="#shoppingcartmodal" data-toggle="modal">My Cart </a>
 				</li>
 
 				<li>
@@ -375,7 +432,7 @@
 				</li>
 
 				<li>
-					<a href="contact.html">Contact</a>
+					<a href="#contactus">Contact</a>
 				</li>
 			</ul>
 		</div>
@@ -399,7 +456,7 @@
 			</div>
 		</div>
 <!-- FORM FOR SEARCH BUTTON ENDS HERE -->
-	</header>
+	</header><hr>
 
 	<!-- Cart -->
 <!-- ADD CART MENU FROM DLETED CODES -->
@@ -551,7 +608,7 @@
 						<img src="images/others_bookscard.jpg" alt="IMG-BANNER" height="350px">
 
 						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
+							<div class="block1-txt-child1 flex-col-l" id="categories">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
 									School Books | Study Materials | Novels | Comics | Stories | Misc.
 								</span>
@@ -709,8 +766,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_physics-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+								Order Now
 							</a>
 						</div>
 
@@ -741,9 +798,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_maths-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -773,9 +829,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/neet-allen-dpp-biology.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -805,9 +860,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/10_science.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -839,9 +893,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_physics_labmanual.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -871,9 +924,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/11_physics_labmanual.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -904,9 +956,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_maths-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -936,9 +987,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/eng_set_square.jpg" alt="IMG-PRODUCT" height="350px">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -968,9 +1018,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_allen_studymaterial.webp" alt="IMG-PRODUCT" height="350px">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1000,9 +1049,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/11_chemistry_labmanual.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1032,9 +1080,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_chemistry_labmanual.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1064,9 +1111,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/11_biology.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1096,9 +1142,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_dpp_biology_careerpoint.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1128,9 +1173,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_biology_labmanual.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1159,9 +1203,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/11_biology_labmanual.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1191,9 +1234,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/10_maths.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1223,9 +1265,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/electricalnetworks_	ravishrsingh.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1256,9 +1297,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/biotech_microbio_mehrotra.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1288,9 +1328,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/9_maths.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1320,9 +1359,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/jee_bmsharma_electrostatics.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1352,9 +1390,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/jee_bmsharma_magnetostatics.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1384,9 +1421,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_xamidea_chemistry.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1416,9 +1452,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/9_science.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1448,9 +1483,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/11_chemistry-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1481,9 +1515,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_arihant_12_physics_solvedpapers.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1513,9 +1546,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_arihant_12_chemistry_solvedpapers.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1545,9 +1577,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/newmillenium_11_physics-1.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1581,9 +1612,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/eng_sheetholder.jpg" alt="IMG-PRODUCT" height="350px">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1613,9 +1643,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/11_chemistry-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1645,9 +1674,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/jee_ksverma_organicchemistry-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1677,9 +1705,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_togetherwith_12_english_questionbank.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1709,9 +1736,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_arihant_12_biology_allinone.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1742,9 +1768,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/newmillenium_11_physics-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1778,9 +1803,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/jee_ksverma_organicchemistry-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1810,9 +1834,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/11_maths.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1842,9 +1865,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/eng_tscale.webp" alt="IMG-PRODUCT" height="350px">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1875,9 +1897,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/11_physics-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1908,9 +1929,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/eng_semicircleprotactor.webp" alt="IMG-PRODUCT" height="350px">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1940,9 +1960,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/11_physics-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -1972,9 +1991,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_dpp_chemistry_careerpoint.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2005,9 +2023,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/slarora_12_physics-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2037,9 +2054,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/11_english_hornbill.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2070,9 +2086,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_allen_11yearspaper.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2102,9 +2117,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/slarora_12_physics-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2135,9 +2149,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/11_english_wovenwords.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2167,9 +2180,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_physics-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2199,9 +2211,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_allen_chemistry_handbook.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2231,9 +2242,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_biology.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2264,9 +2274,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_oswal_9_science_questionbank.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2296,9 +2305,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/hcverma-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2330,9 +2338,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_11_biology-1.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2363,9 +2370,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/hcverma-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2396,9 +2402,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_11_biology-2.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2429,9 +2434,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/truemans_12_biology-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2463,9 +2467,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_chemistry-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2496,9 +2499,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_rsaggarwal_9_psa.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2530,9 +2532,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_10_biology.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2563,9 +2564,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_chemistry-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2595,9 +2595,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_allen_biology_handbook.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2628,9 +2627,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_11_chemistry-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2661,9 +2659,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_english_flamingo.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2694,9 +2691,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_11_chemistry-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2727,9 +2723,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_english_vistas.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2760,9 +2755,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_oswal_10_maths_questionbank.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2793,9 +2787,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/rdsharma_9.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2828,9 +2821,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_english_kaliedoscope.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2859,9 +2851,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_allen_physics_handbook.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2892,9 +2883,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/rdsharma_10.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2925,9 +2915,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_10_chemistry.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2957,9 +2946,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/rdsharma_11.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -2992,9 +2980,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/12_english_flamingo.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -3024,9 +3011,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/rdsharma_12-1.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -3057,9 +3043,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_10_physics-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -3089,9 +3074,8 @@
 						<div class="block2-pic hov-img0">
 							<img src="images/rdsharma_12-2.webp" alt="IMG-PRODUCT">
 
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
+							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+Order Now </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -3145,32 +3129,32 @@
 
 					<ul>
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="#categories" class="stext-107 cl7 hov-cl1 trans-04">
 								School Books
 							</a>
 						</li>
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="#categories" class="stext-107 cl7 hov-cl1 trans-04">
 								Support Books
 							</a>
 						</li>
 
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="#categories" class="stext-107 cl7 hov-cl1 trans-04">
 								Engineering Books
 							</a>
 						</li> 
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="#categories" class="stext-107 cl7 hov-cl1 trans-04">
 								Other Books
 							</a>
 						</li>
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="#categories" class="stext-107 cl7 hov-cl1 trans-04">
 								Stationeries
 							</a>
 						</li>
@@ -3183,33 +3167,34 @@
 					</h4>
 
 					<ul>
-						<li class="p-b-10">
-							<a href="#trackordermodal" class="stext-107 cl7 hov-cl1 trans-04">
-								Track Order
-							</a>
-						</li>
+						<li class="p-b-10" style="color:white;">
 
-<!-- 						<li class="p-b-10">
-							<a data-target="" class="stext-107 cl7 hov-cl1 trans-04">
-								Returns 
-							</a>
-						</li> -->
-
-						<li class="p-b-10">
-							<a href="#shippingmodal" class="stext-107 cl7 hov-cl1 trans-04">
-								Shipping
-							</a>
+						<a data-toggle="modal" href="#myaccountmodaldeskptop" class="stext-107 cl7 hov-cl1 trans-04">
+							Track Order
+						</a>
 						</li>
 
 						<li class="p-b-10">
-							<a href="#faqmodal" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
-							</a>
+							<a data-toggle="modal" href="#myaccountmodaldeskptop" class="stext-107 cl7 hov-cl1 trans-04">
+							Returns
+						</a>
+						</li>
+
+						<li class="p-b-10">
+							<a data-toggle="modal" href="#myaccountmodaldeskptop" class="stext-107 cl7 hov-cl1 trans-04">
+							Shipping
+						</a>
+						</li>
+
+						<li class="p-b-10">
+					<a data-toggle="modal" href="#myaccountmodaldeskptop" class="stext-107 cl7 hov-cl1 trans-04">
+							FAQs
+						</a>
 						</li>
 					</ul>
 				</div>
 
-				<div class="col-sm-6 col-lg-3 p-b-50">
+				<div class="col-sm-6 col-lg-3 p-b-50" id="contactus">
 					<h4 class="stext-301 cl0 p-b-30">
 						GET IN TOUCH
 					</h4>
@@ -3295,7 +3280,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 	<!-- Back to top -->
-	<div class="btn-back-to-top" id="myBtn">
+		<div class="btn-back-to-top" id="myBtn" style="color:blue; background-color:blue;">
 		<span class="symbol-btn-back-to-top">
 			<i class="zmdi zmdi-chevron-up"></i>
 		</span>

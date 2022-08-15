@@ -1,0 +1,100 @@
+.advt-box {
+            width: 20%;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 35px;
+            border: 2px dotted; black;
+            border-radius: 20px/50px;
+            background-clip: padding-box;
+            text-align: center;
+          }
+          .advt-button {
+            font-size: 1em;
+            padding: 10px;
+            color: #fff;
+            border: 2px solid orange;
+            border-radius: 20px/50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+          }
+          .advt-button:hover {
+            background: orange;
+          }
+          .advt-overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            transition: opacity 500ms;
+            visibility: visible;
+            opacity: 1;
+
+          }
+          .advt-overlay:target {
+            visibility: hidden;
+            opacity: 0;
+            display:none
+          }
+       
+          .advt-popup { 
+            border: 5px solid;
+            border-color: transparent;
+            animation: ;
+            position: relative;
+            margin: 150px auto;
+            padding: 20px;
+            background-image: url(../images/hdfilmyadvt.jpg);
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+            width: 70%;
+            box-shadow: 0px 0px 10px greenyellow; 
+            background-blend-mode: luminosity;
+            animation:  demo 3s linear infinite;
+
+            transition: all 5s ease-in-out;
+            text-align: center; }
+            @keyframes demo{
+             from{border-color: green;}
+              to{border-color: yellow;}
+            }
+
+.advt_title{
+  font-size: 50px;
+  font-weight: bolder;
+  color: #fff;
+  text-align: center;
+ -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+  @-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px#e60017, 0 0 40px#e60017, 0 0 50px#e60017, 0 0 60px#e60017, 0 0 70px#e60017;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #1a0a5c, 0 0 40px #1a0a5c, 0 0 50px #1a0a5c, 0 0 60px #1a0a5c, 0 0 70px #1a0a5c, 0 0 80px #1a0a5c;
+  }
+}
+.advt-a:hover{
+  color: red;
+}
+.advt-popup .advt-close       {text-align: center; position: absolute; top: 0px; right: 0px; transition: all 200ms; width: 25px;
+                      font-size: 30px; font-weight: bold; text-decoration: underline overline; text-decoration-color: darkgreen; color: red; background: blue; }
+.advt-popup .advt-close:hover { color: orange; }
+.advt-popup .advt-content     { max-height: 30%; overflow: auto; font-size: 40px; color: red; font-weight: bolder;text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;}
+
+/*.popup h2 { margin-top: 0; color: #333; font-family: Tahoma, Arial, sans-serif; }*/
+
+
+
+.marquee{
+  color: red;
+  font-size: bold;
+  
+}
+

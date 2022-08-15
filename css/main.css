@@ -1209,7 +1209,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .item-slick1 {
-  height: calc(100vh - 40px);
+  height: calc(70vh - 40px);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1225,7 +1225,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 @media (max-width: 991px) {
   .item-slick1 {
-    height: calc(100vh - 70px) !important;
+    height: calc(70vh - 80px) !important;
   }
 }
 

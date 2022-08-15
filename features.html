@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Home</title>
+	<title>Features</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -33,7 +33,6 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/addedstyles.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <!--===============================================================================================-->
@@ -45,6 +44,10 @@
   padding: 16px;
   font-size: 16px;
   border: none;
+}
+
+input{
+	width: 400px;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -79,137 +82,230 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
-</style>
-<!-- ============================================================================================================ -->
-<style type="text/css">
-	.advertisement{
-		--borderWidth: 5px;
-		border:  dotted #bbb; /*dotted border*/
-		width: 80%;
-		border-radius: var(--borderWidth);
-		margin: 0 auto; /*center the coupon*/
-		max-width: 600px;
-		margin-bottom: 10px;
-	}
-	.advt{
-		animation: colorchange 2s linear infinite;
-		color: transparent;
-	}
-	@keyframes colorchange {
-        0% {
-            background: linear-gradient(
-                #008000, #00FF00);
-            -webkit-background-clip: text;
-        }
- 
-        100% {
-           background: linear-gradient(
-                #3CE7D7, #000FFF);
-            -webkit-background-clip: text;
-        }
-    }
-	.contents{
-		padding: 2px 16px;
-		background-color: #f1f1f1;
-	}
-	.condition{
-color: red;
-	}
-	.column-advt{
-		float: left;
-		width: 33.33%;
-	}
-	/* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column-advt {
-    width: 100%;
-  }
+
+.Click-here {
+  cursor: pointer;
+  background-image: linear-gradient(190deg, #f83600 0%, #fee140 100%);
+  color: #fff;
+  width: 180px;
+  text-align: center;
+  font-size:16px;
+  padding: 18px 0;
+  margin: 0 auto;
+  transition:background-image 3s ease-in-out;
 }
-	.row-advt:after{
-		content: "";
-		display: table;
-		clear: both;
+.Click-here:hover{
+  transition:background-image 3s ease-in-out;
+  background-image: linear-gradient(90deg, #fee140 0%, #f83600 100%);
+}
+.custom-model-main {
+  text-align: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; /* z-index: 1050; */
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear, z-index 0.15;
+  -o-transition: opacity 0.15s linear, z-index 0.15;
+  transition: opacity 0.15s linear, z-index 0.15;
+  z-index: -1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.custom-model-inner {
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  display: inline-block;
+  vertical-align: middle;
+  width: 320px;
+  margin: 30px auto;
+  max-width: 97%;
+}
+.custom-model-wrap {
+  display: block;
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  outline: 0;
+  text-align: left;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  max-height: calc(100vh - 70px);
+	overflow-y: auto;
+}
+.model-open .custom-model-inner {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  position: relative;
+  z-index: 999;
+}
+.model-open .bg-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+}
+.bg-overlay {
+  background: rgba(0, 0, 0, 0);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  -webkit-transition: background 0.15s linear;
+  -o-transition: background 0.15s linear;
+  transition: background 0.15s linear;
+}
+.close-btn {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  cursor: pointer;
+  z-index: 99;
+  font-size: 30px;
+  color: #fff;
+}
+@media screen and (min-width:800px){
+	.custom-model-main:before {
+	  content: "";
+	  display: inline-block;
+	  height: auto;
+	  vertical-align: middle;
+	  margin-right: -0px;
+	  height: 100%;
 	}
-
+}
+@media screen and (max-width:799px){
+  .custom-model-inner{margin-top: 45px;}
+}
 </style>
-
-
 <!--===============================================================================================-->
 
 </head>
 <body class="animsition">
 
-	
-	<!-- Header -->
-	<header>
-
-		
-
-		<!-- Header desktop -->
-		<div class="container-menu-desktop">
-
-
-			<!-- Topbar -->
-			<div class="top-bar">
-				<div class="content-topbar flex-sb-m h-full container">
-					<div class="left-top-bar">
-						Free shipping around 5km with order above &#8377; 100
-					</div>
-
-					<div class="right-top-bar flex-w h-full">
-		<a class="btn btn-primary" data-toggle="modal" data-target="#myaccountmodaldeskptop" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
-						</a>
-
-
-			
-
-
-
-
-						<a  style="margin-left: 6px;" class="btn btn-warning" data-toggle="modal" data-target="#myaccountmodaldeskptop" class="flex-c-m trans-04 p-lr-25">
-							My Account
-						</a>
-
-						<a class="flex-c-m trans-04 p-lr-25">
-							IN
-						</a>
-
-						<a  class="flex-c-m trans-04 p-lr-25">
-							USD
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="wrap-menu-desktop">
-
-
-
-					
-
-<!-- My Account Modal Desktop -->
-
-<div class="modal fade" id="myaccountmodaldeskptop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="shoppingcartmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content"style="background-color: whitesmoke;">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Coming Soon</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Checkout</h5><hr>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        Coming Soon...
+       <!--  Shopping cart table wrapper  -->
+		<div id="shopping-cart">
+			<div class="txt-heading">
+				<h1>Shopping cart</h1>
+			</div>
+			<button onClick="emptyCart()" id="btnEmpty" class="btn btn-primary">Empty Cart</button>
+			<form name=ShoppingList class="gform" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbyzvoa2NuEwSAmtS6f9fAfsWB1kV6pvJQrgOt2Y_Q/exec">
+
+			<table class="tbl-cart" cellpadding="10" cellspacing="1">
+				<thead>
+					<tr>
+						<th> Name </th>
+						<th class='text-right' width="10%" >Unit Price </th>
+						<th class='text-right' width="10%" > Quantity </th>
+						<th class='text-right' width="10%"> Sub Total </th>
+					</tr>
+				</thead>
+				<!--  Cart table to load data on "add to cart" action -->
+				<tbody id="cartTableBody">
+				</tbody>
+				<tfoot>
+					<tr>
+						<td class="text-right" >Total: </td>
+						<td id="itemCount" class="text-right" colspan="2"></td>
+						<td id="totalAmount" class="text-right"></td>
+					</tr>
+				</tfoot>
+			</table><hr>
+			<div class="userdetails">
+				<h1>Enter your Details</h1>
+							<input type="text" name="price" id="price">
+							<hr>
+							<textarea  name="orderedproductsdetails" id="orderedproductdetails" rows="4" cols="50"></textarea>
+							<hr>
+							<label for="name">Name:</label><br>
+							<input type="text" name="name" placeholder="Enter your name" ><br>
+							<label for="contact">Contact Number:</label><br>
+							<input  type="number" name="contact" placeholder="Enter your 10 digit mobile number" required maxlength="10" minlength="10"><br>
+							<label for="contact">Email Address:</label><br>
+							<input type="email" name="email" placeholder="Enter your email address" required ><br>
+							<label for="address">Address:</label><br>
+							<textarea name="address" placeholder="Enter your shipping address with PIN Code" rows="5" cols="50" required></textarea><br>
+							<label for="modeofpayment">Mode of Payment:</label>
+							<select name="modeofpayment" id="modeofpayment">
+								<option>Select your mode of Payment</option>
+								<option>UPI</option>
+								<option>Cash On Delivery</option>
+							</select>
+</div>
+			<button type="submit" class="btn Click-here">Checkout</button>
+
+		</form>
+		</div>
+
+
+
+
+		<!-- Shooping Cart Ends here -->
       </div>
+
+      <div class="custom-model-main">
+   <div class="custom-model-inner">
+      <div class="close-btn">×</div>
+      <div class="custom-model-wrap">
+         <div class="pop-up-content-wrap">
+            <h2>Order has been placed successfully!</h2>
+            <p>Our Sales Representative will contact you shortly.</p>
+         </div>
+      </div>
+   </div>
+   <div class="bg-overlay"></div>
+</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>
 </div>
+<!-- Shopping Cart Modal Ends Here -->
+	
 
+
+
+	<!-- Header -->
+	<header>
+
+
+
+
+		<!-- Header desktop -->
+		<div class="container-menu-desktop">
 
 <div class="modal fade" id="shoppingcartmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -284,6 +380,75 @@ color: red;
   </div>
 </div>
 <!-- Shopping Cart Modal Ends Here -->
+			<!-- Topbar -->
+			<div class="top-bar">
+				<div class="content-topbar flex-sb-m h-full container">
+					<div class="left-top-bar">
+						Free shipping around 5km with order above &#8377; 100
+					</div>
+
+					<div class="right-top-bar flex-w h-full">
+						<a class="btn btn-primary" data-toggle="modal" data-target="#myaccountmodaldeskptop" class="flex-c-m trans-04 p-lr-25">
+							Help & FAQs
+						</a>
+
+
+			
+
+
+
+
+						<a  style="margin-left: 6px;" class="btn btn-warning" data-toggle="modal" data-target="#myaccountmodaldeskptop" class="flex-c-m trans-04 p-lr-25">
+							My Account
+						</a>
+
+						<a class="flex-c-m trans-04 p-lr-25">
+							IN
+						</a>
+
+						<a  class="flex-c-m trans-04 p-lr-25">
+							USD
+						</a>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="wrap-menu-desktop">
+
+
+
+					
+
+<!-- My Account Modal Desktop -->
+
+<div class="modal fade" id="myaccountmodaldeskptop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Coming Soon</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Coming Soon...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       <!--  <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
 
 
 <!-- Modal ends here -->
@@ -313,28 +478,21 @@ color: red;
 								<a href="product.html">Shop</a>
 							</li>
 
-							<li class="label1" data-label1="Jobs | Internships">
-								<a href="features.html">Latest News</a>
-							</li>
-
-							<!-- <li>
-								<a href="product.html#contactus">My Cart</a>
-							</li> -->
-
-							<li>
-								<a href="guist.html">GUIST</a>
+							<li class="label1" data-label1="E Books">
+								<a href="ebooks.html">Features</a>
 							</li>
 
 							<li>
-								<a href="free_resources.html">Free Resources</a>
+								<a href="#shoppingcartmodal" data-toggle="modal">My Cart</a>
 							</li>
+
 							<li>
-								<a href="#">HDfilmy</a>
+								<a href="about.html">About</a>
 							</li>
+
 							<li>
 								<a href="#contactus">Contact</a>
 							</li>
-
 						</ul>
 					</div>	
 
@@ -424,26 +582,7 @@ color: red;
 			</ul>
 
 
-<!-- HELPS & FAQS Modal Mobile -->
-					<div class="modal fade" id="helps&faqsmodalmobile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					  <div class="modal-dialog" role="document">
-					    <div class="modal-content">
-					      <div class="modal-header">
-					        <h5 class="modal-title" id="exampleModalLabel">Help & FAQs</h5>
-					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					          <span aria-hidden="true">&times;</span>
-					        </button>
-					      </div>
-					      <div class="modal-body">
-					        Coming Soon
-					      </div>
-					      <div class="modal-footer">
-					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-					      </div>
-					    </div>
-					  </div>
-					</div>
+
 
 
 <!-- My Account Modal Mobile -->
@@ -468,42 +607,41 @@ color: red;
 					</div>
 
 
+
+
+
 			<ul class="main-menu-m">
-				<li class="active-menu">
-								<a href="index.html">Home</a>
-<!-- 								<ul class="sub-menu">
-									<li><a href="index.html">Homepage 1</a></li>
-									<li><a href="home-02.html">Homepage 2</a></li>
-									<li><a href="home-03.html">Homepage 3</a></li>
-								</ul> -->
-							</li>
+				<li>
+					<a href="index.html">Home</a>
+					<!-- <ul class="sub-menu-m">
+						<li><a href="index.html">Homepage 1</a></li>
+						<li><a href="home-02.html">Homepage 2</a></li>
+						<li><a href="home-03.html">Homepage 3</a></li>
+					</ul> -->
+					<span class="arrow-main-menu-m">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+				</li>
 
-							<li>
-								<a href="product.html">Shop</a>
-							</li>
+				<li>
+					<a href="product.html">Shop</a>
+				</li>
 
-							<li class="label1" data-label1="Jobs | Internships">
-								<a href="features.html">Latest News</a>
-							</li>
+				<li>
+					<a href="ebooks.html" class="label1 rs1" data-label1="E Books">Features</a>
+				</li>
 
-							<!-- <li>
-								<a href="product.html#contactus">My Cart</a>
-							</li> -->
+				<li>
+					<a href="#shoppingcartmodal" data-toggle="modal">My Cart </a>
+				</li>
 
-							<li>
-								<a href="guist.html">GUIST</a>
-							</li>
+				<li>
+					<a href="about.html">About</a>
+				</li>
 
-							<li>
-								<a href="free_resources.html">Free Resources</a>
-							</li>
-							<li>
-								<a href="#">HDfilmy</a>
-							</li>
-							<li>
-								<a href="#contactus">Contact</a>
-							</li>
-
+				<li>
+					<a href="#contactus">Contact</a>
+				</li>
 			</ul>
 		</div>
 
@@ -533,380 +671,17 @@ color: red;
 
 		
 
-	<!-- Slider -->
-	<section class="section-slide">
 
-		
+	
 
-
-		<div class="wrap-slick1">
-			<div class="slick1">
-				<div class="item-slick1" style="background-image: url(images/cover.png); background-size: 540px 350px;">
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
-								<span class="ltext-101 cl2 respon2">
-									Study Materials
-								</span>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									FOR YOU
-								</h2>
-							</div>
-								
-							<!-- <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Shop Now
-								</a>
-							</div> -->
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick1" style="background-image: url(images/engineering_banner.jpg);background-size: 900px;">
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-							<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
-								<span class="ltext-101 cl2 respon2" style="color:white;">
-									Books For Engineering
-								</span>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									
-								</h2>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Order Now
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick1" style="background-image: url(images/school-books-desktop.jpg); background-size: 1500px;"> 
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-							<div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0" style="margin-bottom: 100px;">
-								<span class="ltext-101 cl2 respon2" style="color:white;">
-									School Books (Used/New)
-								</span>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									
-								</h2>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-<!-- 								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Order Now
-								</a> -->
-							</div>
-						</div>
-					</div>
-				</div>
-
-			<div class="item-slick1" style="background-image: url(images/support-books-desktop.jpg); background-size: 600px 200px;"> 
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-							<div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0" style="margin-bottom: 100px;">
-								<span class="ltext-101 cl2 respon2" style="color:red; background-color: white;font-weight: 900px;">
-									<b>Support Books (Used/New)</b>
-								</span>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									
-								</h2>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-<!-- 								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Order Now
-								</a> -->
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick1" style="background-image: url(images/school-office-stationery-mobile.jpg); background-size: 650px 400px;"> 
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-							<div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0" style="margin-bottom: 200px; margin-left: 50px; font-weight: bolder;">
-								<span class="ltext-101 cl2 respon2" style="color:red; background-color: white; font: bolder;">
-									Stationeries (Used/New)
-								</span>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									
-								</h2>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-<!-- 								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Order Now
-								</a> -->
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-			</div>
-		</div>
-	</section>
-	<!-- ADVERTISEMENT SECTION========================================================================= -->
-
-<marquee class="marquee" behavior="scroll" direction="left">🚩🚩Get latest updates and study materials for Gauhati University Institute of Science and Technology🚩🚩</marquee>
-
-
-<div class="row-advt">
-	<div class="column-advt">
-	<div class="advertisement">
-
-		
-		<div class="contents">
-			<div style="text-align:right;">
-				<span class="label1" data-label1="Latest"></span>
-			</div>
-			<br>
-			<span class="advt">
-				<b style="text-transform: uppercase;">
-					Gauhati University Institute of Science and Technology
-				</b>
-				</span>
-		</div>
-		<img src="" style="width:100%;">
-		<div class="contents" style="background-color: whitesmoke;">
-			<h2><b> Exclusive Study Materials and Updates</b></h2>
-			<p>Loreum Ipsum....</p>
-		</div>
-		<div class="contents">
-			<p>Avail upto 20% discounts</p>
-			<p class="condition">Valid only for GUIST students*</p>
-			<h6>*Submission of authorized coupons required to avail the offer</h6>
-		</div>
-	</div>
-	</div>
-
-
-
-<!-- OVERLAY POPUP FOR ADVERTISEMENT -->
-
-
-    <div id="popup1" class="advt-overlay">
-
-    	<div class="advt-popup" >
-
-    		<h2><span class="advt_title"> HDFilmy</span></h2>
-    		<a class="advt-close" href="#popup1">x</a>
-    		<div class="advt-content">
-    			Download latest HD films now!!<br><a href="#" class="advt-a"><u>
-    			 Download Here</u></a>
-    		</div>
-
-    	</div>
-    </div>
-<!-- ENDS HERE=============================================================== -->
-<!-- =================Advertisemtn images======================================================================== -->
-<!-- <a href="#"><img src="images/engineering_banner1.webp" alt="Smiley face" style="float:right;width:42px;height:42px;"></a>
- -->
-
-
-        
-  <!-- ============================================================================================================ -->
-</div>
-
-
-
-<div class="banner-headline" style="text-align: center;"><hr>
-	<h1>OUR PRODUCT CATEGORIES</h1><hr>
-</div>
-
-
-
-	<!-- Banner -->
-	<div class="sec-banner bg0 p-t-10 p-b-50">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/others_bookscard.jpg" alt="IMG-BANNER" height="350px">
-
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l" id="categories">
-								<span class="block1-name ltext-102 trans-04 p-b-8" style="color:lightgoldenrodyellow; text-shadow: 0 0 5px black, 0 0 8px black;">
-									School Books | Study Materials | Novels | Comics | Stories | Misc.
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									New / Used / Rent
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Order Now
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-				
-
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/School_Stationery.png" alt="IMG-BANNER" height="350px">
-
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8" style="color:lightgoldenrodyellow; text-shadow: 0 0 5px black, 0 0 8px black;">
-									Engineering | School Stationeries
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									New/Used
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Order Now
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/1.jpg" alt="IMG-BANNER" height="350px">
-
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8" style="color:lightgoldenrodyellow; text-shadow: 0 0 5px black, 0 0 8px black;">
-									Engineering Books
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									New / Used
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Order Now
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/guist_banner.jpg" alt="IMG-BANNER" height="350px">
-
-						<a href="guist.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8" style="color:lightgoldenrodyellow; text-shadow: 0 0 5px black, 0 0 8px black;">
-									Exclusive Materials for GUIST
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									New/Used
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Order Now
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/freestudymaterials.webp" alt="IMG-BANNER" height="350px">
-
-						<a href="free_resources.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8" style="color:lightgoldenrodyellow; text-shadow: 0 0 5px black, 0 0 8px black;">
-									Free Study Materials
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									New/Used/PDFs
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Order Now
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/latestnews.webp" alt="IMG-BANNER" height="350px">
-
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8" style="color:lightgoldenrodyellow; text-shadow: 0 0 5px black, 0 0 8px black;">
-									Latest News 
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									Updates for GUIST | Jobs | Internships
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Order Now
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
 
 
 	<!-- Product -->
+	
 	<section class="bg0 p-t-23 p-b-140">
+		
 		<div class="container">
-			<div class="p-b-10">
-				<h3 class="ltext-103 cl5">
-					Product Overview
-				</h3>
-			</div>
+			<hr>
 
 			<div class="flex-w flex-sb-m p-b-52">
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
@@ -953,16 +728,6 @@ color: red;
 						 </div>
 				</div>
 
-								<div class="dropdown">
-				<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".ebooks">
-						E Books </button>
-<!-- 						<div class="dropdown-content">
-							<hr>
-						    
-
-						 </div> -->
-				</div>
-
 					
 				<div class="dropdown">
 				<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".stationeries">
@@ -984,6 +749,8 @@ color: red;
 
 			</div>
 
+
+
 			<div class="row isotope-grid">
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class12">
@@ -992,21 +759,31 @@ color: red;
 						<div class="block2-pic hov-img0">
 							<img src="images/12_physics-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-								Order Now
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
 							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 Physics Part-I
+									<div class="productname">
+									Class 12 Physics Part-I</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377;70</b>
+									<div class="price">
+									<b>&#8377; <span>70</span></b></div>
 								</span>
 							</div>
+											<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1015,6 +792,7 @@ color: red;
 								</a>
 							</div>
 						</div>
+					</div>
 					</div>
 				</div>
 
@@ -1024,20 +802,32 @@ color: red;
 						<div class="block2-pic hov-img0">
 							<img src="images/12_maths-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 Mathematics Part-I
+									<div class="productname">
+									Class 12 Mathematics Part-I</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 70</b>
+									<div class="price">
+									<b>&#8377; <span> 70</span></b></div>
 								</span>
 							</div>
+
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1048,6 +838,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks NEET">
 					<!-- Block2 -->
@@ -1055,20 +846,31 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/neet-allen-dpp-biology.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Allen Daily Practice Problem Premedical Biology
+								<div class="productname">	Allen Daily Practice Problem Premedical Biology</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price">
+									<b>&#8377; <span>250</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
+
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1079,6 +881,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class10">
 					<!-- Block2 -->
@@ -1086,20 +889,30 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/10_science.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 10 Science 
+								 <div class="productname">Class 10 Science</div> 
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 70</b>
+									<div class="price">
+									<b>&#8377; <span> 70</span></b></div>
 								</span>
 							</div>
+						<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1110,6 +923,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 
@@ -1119,20 +933,31 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/12_physics_labmanual.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 Practical Physics By Lakshmi Publications
+									<div class="productname"> Class 12 Practical Physics By Lakshmi Publications
+								</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 70</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
+
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1143,6 +968,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks labmanuals">
 					<!-- Block2 -->
@@ -1150,20 +976,31 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/11_physics_labmanual.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<div class="productname">
 									Class 11 Practical Physics By Lakshmi Publications
+								</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 70</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1174,6 +1011,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class12">
@@ -1182,21 +1020,29 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/12_maths-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 Mathematics Part-II
+								<div class="productname">	Class 12 Mathematics Part-II </div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 70</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
 
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
 									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
@@ -1206,6 +1052,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item stationeries engineeringinstruments">
 					<!-- Block2 -->
@@ -1213,20 +1060,29 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/eng_set_square.jpg" alt="IMG-PRODUCT" height="350px">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Large Engineering Set Square
+								<div class="productname">	Large Engineering Set Square</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1237,6 +1093,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks NEET">
 					<!-- Block2 -->
@@ -1244,20 +1101,29 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_allen_studymaterial.webp" alt="IMG-PRODUCT" height="350px">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Allen Study Material 2019
+									<div class="productname"> Allen Study Material 2019 </div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 5500</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1268,6 +1134,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks labmanuals">
 					<!-- Block2 -->
@@ -1275,20 +1142,29 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/11_chemistry_labmanual.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 11 Practical Chemistry By Lakshmi Publications
+								<div class="productname">	Class 11 Practical Chemistry By Lakshmi Publications </div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 70</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1299,6 +1175,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks labmanuals">
 					<!-- Block2 -->
@@ -1306,20 +1183,29 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/12_chemistry_labmanual.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 Practical Chemistry By Lakshmi Publications
+									<div class="productname">	Class 12 Practical Chemistry By Lakshmi Publications </div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 70</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1330,6 +1216,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class11">
 					<!-- Block2 -->
@@ -1337,20 +1224,29 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/11_biology.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 11 Biology
+									<div class="productname">	Class 11 Biology </div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 70</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1361,6 +1257,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks NEET">
 					<!-- Block2 -->
@@ -1368,20 +1265,29 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_dpp_biology_careerpoint.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Career Point Daily Practice Problem Biology for Class XII
+								<div class="productname">	Career Point Daily Practice Problem Biology for Class XII </div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1392,6 +1298,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks labmanuals">
 					<!-- Block2 -->
@@ -1399,20 +1306,29 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/12_biology_labmanual.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 Practical Biology By Lakshmi Publications
+									<div class="productname"> Class 12 Practical Biology By Lakshmi Publications </div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 70</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1423,26 +1339,37 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
+
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks labmanuals">
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="images/11_biology_labmanual.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
-
+						<div class="product-item">
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 11 Practical Biology By Lakshmi Publications
+								<div class="productname">	Class 11 Practical Biology By Lakshmi Publications </div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 70</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1453,27 +1380,38 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class10">
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="images/10_maths.jpg" alt="IMG-PRODUCT">
+							<img src="images/10_maths.jpg" alt="IMG-PRODUCT" height="280px">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+						<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 10 Mathematics
+									<div class="productname">	Class 10 Mathematics </div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1484,6 +1422,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item engineeringbooks ece">
 					<!-- Block2 -->
@@ -1491,20 +1430,30 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/electricalnetworks_	ravishrsingh.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+						<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Electrical Networks by Ravish R. Singh
+								<div class="productname">	Electrical Networks by Ravish R. Singh </div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1515,6 +1464,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item engineeringbooks biotech">
@@ -1523,20 +1473,30 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/biotech_microbio_mehrotra.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+						<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Principles of Microbiology by C. Mehrotra
+								<div class="productname">	Principles of Microbiology by C. Mehrotra </div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1547,6 +1507,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class9">
 					<!-- Block2 -->
@@ -1554,20 +1515,30 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/9_maths.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+						<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 9 Mathematics
+								 <div class="productname">	Class 9 Mathematics </div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1578,6 +1549,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks JEE">
 					<!-- Block2 -->
@@ -1585,20 +1557,31 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/jee_bmsharma_electrostatics.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+						<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Physics JEE Advance by B.M. Sharma (Electrostatics)
+								 <div class="productname">	Physics JEE Advance by B.M. Sharma (Electrostatics) </div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1609,6 +1592,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks JEE">
 					<!-- Block2 -->
@@ -1616,20 +1600,30 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/jee_bmsharma_magnetostatics.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+					<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Physics JEE Advance by B.M. Sharma (Magnetism)
+								 <div class="productname"> Physics JEE Advance by B.M. Sharma (Magnetism)	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1640,6 +1634,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks CBSE">
 					<!-- Block2 -->
@@ -1647,20 +1642,31 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_xamidea_chemistry.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+					<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Xam idea Chemistry Question Bank for class 12
+								 <div class="productname"> Xam idea Chemistry Question Bank for class 12	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1671,6 +1677,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class9">
 					<!-- Block2 -->
@@ -1678,20 +1685,31 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/9_science.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+					<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 9 Science
+								 <div class="productname"> Class 9 Science	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1702,6 +1720,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class11">
 					<!-- Block2 -->
@@ -1709,20 +1728,31 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/11_chemistry-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+					<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 11 Chemistry Part-I
+								 <div class="productname"> Class 11 Chemistry Part-I	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1733,6 +1763,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks CBSE">
@@ -1741,20 +1772,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_arihant_12_physics_solvedpapers.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+					<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Arihant CBSE Physics Chapter-wise Solved Papers for class 12 2009-2017
+								 <div class="productname"> Arihant CBSE Physics Chapter-wise Solved Papers for class 12 2009-2017
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1765,6 +1808,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks CBSE">
 					<!-- Block2 -->
@@ -1772,20 +1816,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_arihant_12_chemistry_solvedpapers.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+						<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Arihant CBSE Chemistry Chapter-wise Solved Papers for class 12 2009-2017
+								 <div class="productname"> Arihant CBSE Chemistry Chapter-wise Solved Papers for class 12 2009-2017
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1796,6 +1852,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks OTHERS">
 					<!-- Block2 -->
@@ -1803,20 +1860,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/newmillenium_11_physics-1.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+					<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									New Millenium Physics Vol-I For Class XI by S.K. Sharma
+								 <div class="productname"> New Millenium Physics Vol-I For Class XI by S.K. Sharma
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1827,6 +1896,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 
@@ -1838,20 +1908,31 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/eng_sheetholder.jpg" alt="IMG-PRODUCT" height="350px">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+					<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Black Sheet Holder
+								 <div class="productname"> Black Sheet Holder	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1862,6 +1943,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class11">
 					<!-- Block2 -->
@@ -1869,20 +1951,31 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/11_chemistry-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+					<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 11 Chemistry Part-II
+								 <div class="productname"> Class 11 Chemistry Part-II	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1893,6 +1986,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks JEE">
 					<!-- Block2 -->
@@ -1900,20 +1994,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/jee_ksverma_organicchemistry-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+							<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Organic Chemistry for JEE Advance by K.S. Verma (Part-I)
+								 <div class="productname"> Organic Chemistry for JEE Advance by K.S. Verma (Part-I)
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1924,6 +2030,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks CBSE">
 					<!-- Block2 -->
@@ -1931,20 +2038,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_togetherwith_12_english_questionbank.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+						<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Together with English Core for Class 12 CBSE
+								 <div class="productname"> Together with English Core for Class 12 CBSE
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1955,6 +2074,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks CBSE">
 					<!-- Block2 -->
@@ -1962,20 +2082,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_arihant_12_biology_allinone.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+						<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Arihant CBSE Biology All in One for Class 12 (2017-18)
+								 <div class="productname"> Arihant CBSE Biology All in One for Class 12 (2017-18)
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -1986,6 +2118,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks OTHERS">
@@ -1994,20 +2127,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/newmillenium_11_physics-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+							<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									New Millenium Physics Vol-II For Class XI by S.K. Sharma
+								 <div class="productname"> New Millenium Physics Vol-II For Class XI by S.K. Sharma
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2018,6 +2163,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 
@@ -2029,20 +2175,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/jee_ksverma_organicchemistry-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+											<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Organic Chemistry for JEE Advance by K.S. Verma (Part-II)
+								 <div class="productname"> Organic Chemistry for JEE Advance by K.S. Verma (Part-II)
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2053,6 +2211,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class11">
 					<!-- Block2 -->
@@ -2060,20 +2219,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/11_maths.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 11 Mathematics
+								 <div class="productname"> Class 11 Mathematics
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2084,6 +2255,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item stationeries engineeringinstruments">
 					<!-- Block2 -->
@@ -2091,20 +2263,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/eng_tscale.webp" alt="IMG-PRODUCT" height="350px">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+											<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Engineering T Scale with Blue Cover
+								 <div class="productname"> Engineering T Scale with Blue Cover
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2115,6 +2299,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class11">
@@ -2123,20 +2308,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/11_physics-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 11 Physics Part-I
+								 <div class="productname"> Class 11 Physics Part-I
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2147,6 +2344,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item stationeries engineeringinstruments">
@@ -2155,20 +2353,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/eng_semicircleprotactor.webp" alt="IMG-PRODUCT" height="350px">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+											<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Omega Semi Circle Protactor
+								 <div class="productname"> Omega Semi Circle Protactor
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2179,6 +2389,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class11">
 					<!-- Block2 -->
@@ -2186,20 +2397,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/11_physics-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+											<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 11 Physics Part-II
+								 <div class="productname"> Class 11 Physics Part-II
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2210,6 +2433,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks NEET">
 					<!-- Block2 -->
@@ -2217,20 +2441,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_dpp_chemistry_careerpoint.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Career Point Daily Practice Problem Chemistry for Class XII
+								 <div class="productname"> Career Point Daily Practice Problem Chemistry for Class XII
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2241,6 +2477,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks OTHERS">
@@ -2249,20 +2486,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/slarora_12_physics-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+											<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									New Simplified Physics Vol-I For Class XII by S.L. Arora
+								 <div class="productname"> New Simplified Physics Vol-I For Class XII by S.L. Arora
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2273,6 +2522,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class11">
 					<!-- Block2 -->
@@ -2280,20 +2530,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/11_english_hornbill.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 11 English Hornbill
+								 <div class="productname"> Class 11 English Hornbill
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2304,6 +2566,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks NEET">
@@ -2312,20 +2575,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_allen_11yearspaper.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+											<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									NEET Test Papers of 11 years 2007-2018 by ALLEN
+								 <div class="productname"> NEET Test Papers of 11 years 2007-2018 by ALLEN
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2336,6 +2611,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks OTHERS">
 					<!-- Block2 -->
@@ -2343,20 +2619,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/slarora_12_physics-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									New Simplified Physics Vol-II For Class XII by S.L. Arora
+								 <div class="productname"> New Simplified Physics Vol-II For Class XII by S.L. Arora
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2367,6 +2655,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class11">
@@ -2375,20 +2664,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/11_english_wovenwords.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 11 English Woven Words
+								 <div class="productname"> Class 11 English Woven Words
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2399,6 +2700,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class12">
 					<!-- Block2 -->
@@ -2406,20 +2708,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/12_physics-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 Physics Part-II
+								 <div class="productname"> Class 12 Physics Part-II
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2430,6 +2744,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks NEET">
 					<!-- Block2 -->
@@ -2437,20 +2752,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_allen_chemistry_handbook.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Chemistry Handbook for NEET UG by ALLEN
+								 <div class="productname"> Chemistry Handbook for NEET UG by ALLEN
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2461,6 +2788,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class12">
 					<!-- Block2 -->
@@ -2468,20 +2796,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/12_biology.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 Biology
+								 <div class="productname"> Class 12 Biology
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2492,6 +2832,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks CBSE">
@@ -2500,20 +2841,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_oswal_9_science_questionbank.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Oswal Question Bank Science for Class 9 (2015)
+								 <div class="productname"> Oswal Question Bank Science for Class 9 (2015)
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2524,27 +2877,39 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
-
+			</div>
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks OTHERS">
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="images/hcverma-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Concepts of Physics Vol-I by H.C. Verma
+								 <div class="productname"> Concepts of Physics Vol-I by H.C. Verma
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2555,6 +2920,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 
@@ -2564,20 +2930,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_11_biology-1.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+									<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Pradeeps A Textbook Of Biology Vol-I for Class 11
+								 <div class="productname"> Pradeeps A Textbook Of Biology Vol-I for Class 11
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2588,6 +2966,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks OTHERS">
@@ -2596,20 +2975,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/hcverma-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Concepts of Physics Vol-II by H.C. Verma
+								 <div class="productname"> Concepts of Physics Vol-II by H.C. Verma
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2620,6 +3011,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks PRADEEPS">
@@ -2628,20 +3020,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_11_biology-2.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Pradeeps A Textbook Of Biology Vol-II for Class 11
+								 <div class="productname"> Pradeeps A Textbook Of Biology Vol-II for Class 11
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2652,6 +3056,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks OTHERS">
@@ -2660,20 +3065,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/truemans_12_biology-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Trueman's Elementary Biology, Volume 2 For Class XII
+								 <div class="productname"> Trueman's Elementary Biology, Volume 2 For Class XII
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2684,6 +3101,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 
@@ -2693,20 +3111,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/12_chemistry-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 Chemistry Part-I
+								 <div class="productname"> Class 12 Chemistry Part-I
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2717,6 +3147,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks CBSE">
@@ -2725,20 +3156,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_rsaggarwal_9_psa.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+									<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									R.S Aggarwal Problem Solving Assessment for Class 9
+								 <div class="productname"> R.S Aggarwal Problem Solving Assessment for Class 9
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2749,6 +3192,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 
@@ -2758,20 +3202,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_10_biology.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Pradeeps A Textbook Of Biology for Class X
+								 <div class="productname"> Pradeeps A Textbook Of Biology for Class X
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2782,7 +3238,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
-
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class12">
 					<!-- Block2 -->
@@ -2790,20 +3246,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/12_chemistry-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+									<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 Chemistry Part-II
+								 <div class="productname"> Class 12 Chemistry Part-II
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2814,6 +3282,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks NEET">
 					<!-- Block2 -->
@@ -2821,20 +3290,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_allen_biology_handbook.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+									<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Biology Handbook for NEET UG by ALLEN
+								 <div class="productname"> Biology Handbook for NEET UG by ALLEN
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2845,6 +3326,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks PRADEEPS">
@@ -2853,20 +3335,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_11_chemistry-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Pradeeps A Textbook Of Chemistry Vol-I for Class 11
+								 <div class="productname"> Pradeeps A Textbook Of Chemistry Vol-I for Class 11
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2877,6 +3371,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class12">
@@ -2885,20 +3380,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/12_english_flamingo.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+									<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 English Flamingo
+								 <div class="productname"> Class 12 English Flamingo
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2909,6 +3416,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks PRADEEPS">
@@ -2917,20 +3425,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_11_chemistry-2.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+									<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Pradeeps A Textbook Of Chemistry Vol-II for Class 11
+								 <div class="productname"> Pradeeps A Textbook Of Chemistry Vol-II for Class 11
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2941,6 +3461,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item schoolbooks class12">
@@ -2949,20 +3470,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/12_english_vistas.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 English Vistas
+								 <div class="productname"> Class 12 English Vistas
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -2973,6 +3506,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks CBSE">
@@ -2981,20 +3515,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/cbse_oswal_10_maths_questionbank.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+									<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Oswal Question Bank Mathematics for Class 10 (2016)
+								 <div class="productname"> Oswal Question Bank Mathematics for Class 10 (2016)
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -3005,6 +3551,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks RDSHARMA">
@@ -3013,20 +3560,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/rdsharma_9.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+									<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Mathematics For Class IX by R.D. Sharma
+								 <div class="productname"> Mathematics For Class IX by R.D. Sharma
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -3037,7 +3596,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
-
+			</div>
 
 
 
@@ -3047,20 +3606,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/12_english_kaliedoscope.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+											<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 English Kaliedoscope
+								 <div class="productname"> Class 12 English Kaliedoscope
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -3071,26 +3642,42 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
+
+
+
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks NEET">
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<img src="images/neet_allen_physics_handbook.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Physics Handbook for NEET UG by ALLEN
+								 <div class="productname"> Physics Handbook for NEET UG by ALLEN
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -3101,6 +3688,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks RDSHARMA">
@@ -3109,20 +3697,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/rdsharma_10.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+									<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Mathematics For Class X by R.D. Sharma
+								 <div class="productname"> Mathematics For Class X by R.D. Sharma
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -3133,6 +3733,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks PRADEEPS">
@@ -3141,20 +3742,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_10_chemistry.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+										<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Pradeeps A Textbook Of Chemistry for Class X
+								 <div class="productname"> Pradeeps A Textbook Of Chemistry for Class X
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -3165,6 +3778,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks RDSHARMA">
 					<!-- Block2 -->
@@ -3172,20 +3786,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/rdsharma_11.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+							<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Mathematics For Class XI by R.D. Sharma
+								 <div class="productname"> Mathematics For Class XI by R.D. Sharma
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -3196,6 +3822,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 
@@ -3206,20 +3833,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/12_english_flamingo.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+								<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Class 12 English Flamingo
+								 <div class="productname"> Class 12 English Flamingo
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -3230,6 +3869,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks RDSHARMA">
 					<!-- Block2 -->
@@ -3237,20 +3877,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/rdsharma_12-1.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+									<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Mathematics For Class XII Volume-I by R.D. Sharma
+								 <div class="productname"> Mathematics For Class XII Volume-I by R.D. Sharma
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -3261,6 +3913,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks PRADEEPS">
@@ -3269,20 +3922,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/pradeeps_10_physics-1.jpg" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+								<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Pradeeps A Textbook Of Physics Vol-I  for Class X
+								 <div class="productname"> Pradeeps A Textbook Of Physics Vol-I  for Class X
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -3293,6 +3958,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item supportbooks RDSHARMA">
 					<!-- Block2 -->
@@ -3300,20 +3966,32 @@ Order Now </a>
 						<div class="block2-pic hov-img0">
 							<img src="images/rdsharma_12-2.webp" alt="IMG-PRODUCT">
 
-							<a href="product.html" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-Order Now </a>
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
 						</div>
+
+									<div class="product-item">
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Mathematics For Class XII Volume-II by R.D. Sharma
+								 <div class="productname"> Mathematics For Class XII Volume-II by R.D. Sharma
+	</div>
 								</a>
 
 								<span class="stext-105 cl3">
-									<b>&#8377; 250</b>
+									<div class="price"> <b>&#8377;<span> 70</span></b></div>
 								</span>
 							</div>
+							<div class="cart-action">
+											<p>Specify the number</p>
+
+											<input type="text" class="product-quantity" name="quantity" value="1" size="2" style="text-align:center; min-width:10px;"><hr>
+										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+										Add to cart
+										</button>
+									</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
@@ -3324,7 +4002,7 @@ Order Now </a>
 						</div>
 					</div>
 				</div>
-
+			</div>
 
 
 </div>
@@ -3338,13 +4016,7 @@ Order Now </a>
 		</div>
 	</section>
 
-			
-
-
-
-
-
-	<!-- Footer -->
+		<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
 			<div class="row">
@@ -3506,270 +4178,22 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 	<!-- Back to top -->
-		<div class="btn-back-to-top" id="myBtn" style="color:blue; background-color:blue;">
+	<div class="btn-back-to-top" id="myBtn" style="color:blue; background-color:blue;">
 		<span class="symbol-btn-back-to-top">
 			<i class="zmdi zmdi-chevron-up"></i>
 		</span>
 	</div>
 
-	<!-- Modal1 -->
-	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
-		<div class="overlay-modal1 js-hide-modal1"></div>
+<!-- Modal1 -->
 
-		<div class="container">
-			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-				<button class="how-pos3 hov3 trans-04 js-hide-modal1">
-					<img src="images/icons/icon-close.png" alt="CLOSE">
-				</button>
+	<!-- Physics Modal Ends Here -->
 
-				<div class="row">
-					<div class="col-md-6 col-lg-7 p-b-30">
-						<div class="p-l-25 p-r-30 p-lr-0-lg">
-							<div class="wrap-slick3 flex-sb flex-w">
-								<div class="wrap-slick3-dots"></div>
-								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 
-								<div class="slick3 gallery-lb">
-									<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
-										<div class="wrap-pic-w pos-relative">
-											<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
 
-											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
-												<i class="fa fa-expand"></i>
-											</a>
-										</div>
-									</div>
+<!-- ==========================================SCRIPTS=========================================================== -->
 
-									<div class="item-slick3" data-thumb="images/product-detail-02.jpg">
-										<div class="wrap-pic-w pos-relative">
-											<img src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
-
-											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.jpg">
-												<i class="fa fa-expand"></i>
-											</a>
-										</div>
-									</div>
-
-									<div class="item-slick3" data-thumb="images/product-detail-03.jpg">
-										<div class="wrap-pic-w pos-relative">
-											<img src="images/product-detail-03.jpg" alt="IMG-PRODUCT">
-
-											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-03.jpg">
-												<i class="fa fa-expand"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 col-lg-5 p-b-30">
-						<div class="p-r-50 p-t-5 p-lr-0-lg">
-							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-								Lightweight Jacket
-							</h4>
-
-							<span class="mtext-106 cl2">
-								$58.79
-							</span>
-
-							<p class="stext-102 cl3 p-t-23">
-								Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
-							</p>
-							
-							<!--  -->
-							<div class="p-t-33">
-								<div class="flex-w flex-r-m p-b-10">
-									<div class="size-203 flex-c-m respon6">
-										Size
-									</div>
-
-									<div class="size-204 respon6-next">
-										<div class="rs1-select2 bor8 bg0">
-											<select class="js-select2" name="time">
-												<option>Choose an option</option>
-												<option>Size S</option>
-												<option>Size M</option>
-												<option>Size L</option>
-												<option>Size XL</option>
-											</select>
-											<div class="dropDownSelect2"></div>
-										</div>
-									</div>
-								</div>
-
-								<div class="flex-w flex-r-m p-b-10">
-									<div class="size-203 flex-c-m respon6">
-										Color
-									</div>
-
-									<div class="size-204 respon6-next">
-										<div class="rs1-select2 bor8 bg0">
-											<select class="js-select2" name="time">
-												<option>Choose an option</option>
-												<option>Red</option>
-												<option>Blue</option>
-												<option>White</option>
-												<option>Grey</option>
-											</select>
-											<div class="dropDownSelect2"></div>
-										</div>
-									</div>
-								</div>
-
-								<div class="flex-w flex-r-m p-b-10">
-									<div class="size-204 flex-w flex-m respon6-next">
-										<div class="wrap-num-product flex-w m-r-20 m-tb-10">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-minus"></i>
-											</div>
-
-											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
-
-											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-plus"></i>
-											</div>
-										</div>
-
-										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-											Add to cart
-										</button>
-									</div>
-								</div>	
-							</div>
-
-							<!--  -->
-							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
-								<div class="flex-m bor9 p-r-10 m-r-11">
-									<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
-										<i class="zmdi zmdi-favorite"></i>
-									</a>
-								</div>
-
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
-									<i class="fa fa-facebook"></i>
-								</a>
-
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
-									<i class="fa fa-twitter"></i>
-								</a>
-
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
-									<i class="fa fa-google-plus"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<!--===============================================================================================-->	
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-	<script>
-		$(".js-select2").each(function(){
-			$(this).select2({
-				minimumResultsForSearch: 20,
-				dropdownParent: $(this).next('.dropDownSelect2')
-			});
-		})
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/slick/slick.min.js"></script>
-	<script src="js/slick-custom.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/parallax100/parallax100.js"></script>
-	<script>
-        $('.parallax100').parallax100();
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-	<script>
-		$('.gallery-lb').each(function() { // the containers for all your galleries
-			$(this).magnificPopup({
-		        delegate: 'a', // the selector for gallery item
-		        type: 'image',
-		        gallery: {
-		        	enabled:true
-		        },
-		        mainClass: 'mfp-fade'
-		    });
-		});
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/sweetalert/sweetalert.min.js"></script>
-	<script>
-		$('.js-addwish-b2').on('click', function(e){
-			e.preventDefault();
-		});
-
-		$('.js-addwish-b2').each(function(){
-			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
-
-				$(this).addClass('js-addedwish-b2');
-				$(this).off('click');
-			});
-		});
-
-		$('.js-addwish-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
-
-				$(this).addClass('js-addedwish-detail');
-				$(this).off('click');
-			});
-		});
-
-		/*---------------------------------------------*/
-
-		$('.js-addcart-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
-			});
-		});
-	
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-	<script>
-		$('.js-pscroll').each(function(){
-			$(this).css('position','relative');
-			$(this).css('overflow','hidden');
-			var ps = new PerfectScrollbar(this, {
-				wheelSpeed: 1,
-				scrollingThreshold: 1000,
-				wheelPropagation: false,
-			});
-
-			$(window).on('resize', function(){
-				ps.update();
-			})
-		});
-	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-<script type="text/javascript">
+<script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
+	<script type="text/javascript">
 	
 	(function() {
   // get all data in form and return object
@@ -3877,8 +4301,252 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   }})();
  </script>
 
- 
- <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/slick/slick.min.js"></script>
+	<script src="js/slick-custom.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/parallax100/parallax100.js"></script>
+	<script>
+        $('.parallax100').parallax100();
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+	<script>
+		$('.gallery-lb').each(function() { // the containers for all your galleries
+			$(this).magnificPopup({
+		        delegate: 'a', // the selector for gallery item
+		        type: 'image',
+		        gallery: {
+		        	enabled:true
+		        },
+		        mainClass: 'mfp-fade'
+		    });
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/sweetalert/sweetalert.min.js"></script>
+	<script>
+		$('.js-addwish-b2, .js-addwish-detail').on('click', function(e){
+			e.preventDefault();
+		});
+
+		$('.js-addwish-b2').each(function(){
+			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-b2');
+				$(this).off('click');
+			});
+		});
+
+		$('.js-addwish-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-detail');
+				$(this).off('click');
+			});
+		});
+
+		/*---------------------------------------------*/
+
+		$('.js-addcart-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to cart !", "success");
+			});
+		});
+	
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	<!-- =========================================================================================== -->
+	<!-- Cart Javascript Client Side -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+	var productItem = [
+		{
+			productName: "EXP Portable Hard Drive",
+			price: "800.00",
+			photo: "external-hard-drive.jpg"
+		},
+		{
+			productName: "Luxury Ultra thin Wrist Watch",
+			price: "500.00",
+			photo: "laptop.jpg"
+		},
+		{
+			productName: "XP 1155 Intel Core Laptop",
+			price: "1000.00",
+			photo: "watch.jpg"
+		}];
+	showProductGallery(productItem);
+	showCartTable();
+});
+
+function addToCart(element) {
+	var productParent = $(element).closest('div.product-item');
+
+	var price = $(productParent).find('.price span').text();
+	var productName = $(productParent).find('.productname').text();
+	var quantity = $(productParent).find('.product-quantity').val();
+
+	var cartItem = {
+		productName: productName,
+		price: price,
+		quantity: quantity
+	};
+	var cartItemJSON = JSON.stringify(cartItem);
+
+	var cartArray = new Array();
+	// If javascript shopping cart session is not empty
+	if (sessionStorage.getItem('shopping-cart')) {
+		cartArray = JSON.parse(sessionStorage.getItem('shopping-cart'));
+	}
+	cartArray.push(cartItemJSON);
+
+	var cartJSON = JSON.stringify(cartArray);
+	sessionStorage.setItem('shopping-cart', cartJSON);
+	showCartTable();
+}
+
+function emptyCart() {
+	if (sessionStorage.getItem('shopping-cart')) {
+		// Clear JavaScript sessionStorage by index
+		sessionStorage.removeItem('shopping-cart');
+		showCartTable();
+	}
+}
+
+
+
+function removeCartItem(index) {
+	if (sessionStorage.getItem('shopping-cart')) {
+		var shoppingCart = JSON.parse(sessionStorage.getItem('shopping-cart'));
+		sessionStorage.removeItem(shoppingCart[index]);
+		showCartTable();
+	}
+}
+
+function showCartTable() {
+	var cartRowHTML = "";
+	var itemCount = 0;
+	var grandTotal = 0;
+
+	var price = 0;
+	var quantity = 0;
+	var subTotal = 0;
+
+	if (sessionStorage.getItem('shopping-cart')) {
+		var shoppingCart = JSON.parse(sessionStorage.getItem('shopping-cart'));
+		itemCount = shoppingCart.length;
+
+		//Iterate javascript shopping cart array
+		shoppingCart.forEach(function(item) {
+			var cartItem = JSON.parse(item);
+			price = parseFloat(cartItem.price);
+			quantity = parseInt(cartItem.quantity);
+			subTotal = price * quantity
+
+			cartRowHTML += "<tr>" +
+				"<td>" + cartItem.productName + "</td>" +
+				"<td class='text-right'>₹" + price.toFixed(2) + "</td>" +
+				"<td class='text-right'>" + quantity + "</td>" +
+				"<td class='text-right'>₹" + subTotal.toFixed(2) + "</td>" +
+				"</tr>";
+
+			grandTotal += subTotal;
+				document.getElementById("orderedproductdetails").value = cartRowHTML;
+
+		});
+		 document.getElementById("price").value = grandTotal;
+		 // document.getElementById("orderedproductname").value = productName;
+
+	}
+
+	$('#cartTableBody').html(cartRowHTML);
+	$('#itemCount').text(itemCount);
+	$('#totalAmount').text("₹" + grandTotal.toFixed(2));
+}
+
+
+// function showProductGallery(product) {
+// 	//Iterate javascript shopping cart array
+// 	var productHTML = "";
+// 	product.forEach(function(item) {
+// 		productHTML += '<div class="product-item">'+
+// 					'<img src="product-images/' + item.photo + '">'+
+// 					'<div class="productname">' + item.productName + '</div>'+
+// 					'<div class="price">$<span>' + item.price + '</span></div>'+
+// 					'<div class="cart-action">'+
+// 						'<input type="text" class="product-quantity" name="quantity" value="1" size="2" />'+
+// 						'<input type="submit" value="Add to Cart" class="add-to-cart" onClick="addToCart(this)" />'+
+// 					'</div>'+
+// 				'</div>';
+// 				"<tr>";
+		
+// 	});
+// 	$('#product-item-container').html(productHTML);
+// }
+
+	</script>
+	<script type="text/javascript">
+		document.getElementById("orderedproductdetails").style.display= "none";
+		document.getElementById("price").style.display= "none";
+	</script>
+
+	<!-- jQuery -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script>
+    $(".Click-here").on('click', function() {
+      $(".custom-model-main").addClass('model-open');
+    }); 
+    $(".close-btn, .bg-overlay").click(function(){
+      $(".custom-model-main").removeClass('model-open');
+    });
+    </script>
 
 </body>
 </html>

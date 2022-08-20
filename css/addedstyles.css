@@ -1,3 +1,8 @@
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
 .advt-box {
             width: 20%;
             margin: 0 auto;
@@ -96,5 +101,9 @@
   color: red;
   font-size: bold;
   
+}
+
+.strikedprice{
+  text-decoration-line: line-through;
 }
 

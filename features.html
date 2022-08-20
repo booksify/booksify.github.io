@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="5hyNB5DZhCwSxEn1hJfWngPmhT0ZrnF5AVFMfueYYgQ" />
+    <meta name="description" content="Books for engineering, Notes, Study materials for NEET/JEE/CBSE, Find new and used books at lowest cost">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.png" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/addedstyles.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--===============================================================================================-->
+    <style type="text/css">
+        /* Dropdown Button */
+        
+        .dropbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+        /* The container <div> - needed to position the dropdown content */
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        /* Dropdown Content (Hidden by Default) */
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        /* Links inside the dropdown */
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        /* Change color of dropdown links on hover */
+        
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        /* Show the dropdown menu on hover */
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+    <!-- ============================================================================================================ -->
+    <style type="text/css">
+        .advertisement {
+            --borderWidth: 5px;
+            border: dotted #bbb;
+            /*dotted border*/
+            width: 80%;
+            border-radius: var(--borderWidth);
+            margin: 0 auto;
+            /*center the coupon*/
+            max-width: 600px;
+            margin-bottom: 10px;
+        }
+        
+        .advt {
+            animation: colorchange 2s linear infinite;
+            color: transparent;
+        }
+        
+        @keyframes colorchange {
+            0% {
+                background: linear-gradient( #008000, #00FF00);
+                -webkit-background-clip: text;
+            }
+            100% {
+                background: linear-gradient( #3CE7D7, #000FFF);
+                -webkit-background-clip: text;
+            }
+        }
+        
+        .contents {
+            padding: 2px 16px;
+            background-color: #f1f1f1;
+        }
+        
+        .condition {
+            color: red;
+        }
+        
+        .column-advt {
+            float: left;
+            width: 33.33%;
+        }
+        /* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 600px) {
+            .column-advt {
+                width: 100%;
+            }
+        }
+        
+        .row-advt:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+
+
+    <!--===============================================================================================-->
+
+</head>
+
+<body class="animsition">
+
+
+    <!-- Header -->
+    <header>
+
+
+
+        <!-- Header desktop -->
+        <div class="container-menu-desktop">
+
+
+            <!-- Topbar -->
+            <div class="top-bar">
+                <div class="content-topbar flex-sb-m h-full container">
+                    <div class="left-top-bar">
+                        Free shipping around 5km with order above &#8377; 100
+                    </div>
+
+                    <div class="right-top-bar flex-w h-full">
+                        <a class="btn btn-primary" data-toggle="modal" data-target="#myaccountmodaldeskptop" class="flex-c-m trans-04 p-lr-25">
+							Help & FAQs
+						</a>
+
+
+
+
+
+
+
+                        <a style="margin-left: 6px;" class="btn btn-warning" data-toggle="modal" data-target="#myaccountmodaldeskptop" class="flex-c-m trans-04 p-lr-25">
+							My Account
+						</a>
+
+                        <a class="flex-c-m trans-04 p-lr-25">
+							IN
+						</a>
+
+                        <a class="flex-c-m trans-04 p-lr-25">
+							USD
+						</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrap-menu-desktop">
+
+
+
+
+
+                <!-- My Account Modal Desktop -->
+
+                <div class="modal fade" id="myaccountmodaldeskptop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Coming Soon</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                            </div>
+                            <div class="modal-body">
+                                Coming Soon...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal fade" id="shoppingcartmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" style="background-color: whitesmoke;">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Checkout</h5>
+                                <hr>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                            </div>
+                            <div class="modal-body">
+                                <!--  Shopping cart table wrapper  -->
+                                <div id="shopping-cart">
+                                    <div class="txt-heading">
+                                        <h1>Shopping cart</h1>
+                                    </div>
+                                    <button onClick="emptyCart()" id="btnEmpty" class="btn btn-primary">Empty Cart</button>
+                                    <form name=ShoppingList class="gform" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbyzvoa2NuEwSAmtS6f9fAfsWB1kV6pvJQrgOt2Y_Q/exec">
+
+                                        <table class="tbl-cart" cellpadding="10" cellspacing="1">
+                                            <thead>
+                                                <tr>
+                                                    <th> Name </th>
+                                                    <th class='text-right' width="10%">Unit Price </th>
+                                                    <th class='text-right' width="10%"> Quantity </th>
+                                                    <th class='text-right' width="10%"> Sub Total </th>
+                                                </tr>
+                                            </thead>
+                                            <!--  Cart table to load data on "add to cart" action -->
+                                            <tbody id="cartTableBody">
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td class="text-right">Total: </td>
+                                                    <td id="itemCount" class="text-right" colspan="2"></td>
+                                                    <td id="totalAmount" class="text-right"></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                        <hr>
+                                        <div class="userdetails">
+                                            <h1>Enter your Details</h1>
+                                            <input type="text" name="price" id="price">
+                                            <hr>
+                                            <textarea name="orderedproductsdetails" id="orderedproductdetails" rows="4" cols="50"></textarea>
+                                            <hr>
+                                            <label for="name">Name:</label><br>
+                                            <input type="text" name="name" placeholder="Enter your name"><br>
+                                            <label for="contact">Contact Number:</label><br>
+                                            <input type="number" name="contact" placeholder="Enter your 10 digit mobile number" required maxlength="10" minlength="10"><br>
+                                            <label for="contact">Email Address:</label><br>
+                                            <input type="email" name="email" placeholder="Enter your email address" required><br>
+                                            <label for="address">Address:</label><br>
+                                            <textarea name="address" placeholder="Enter your shipping address with PIN Code" rows="5" cols="50" required></textarea><br>
+                                            <label for="modeofpayment">Mode of Payment:</label>
+                                            <select name="modeofpayment" id="modeofpayment">
+								<option>Select your mode of Payment</option>
+								<option>UPI</option>
+								<option>Cash On Delivery</option>
+							</select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Checkout</button>
+
+                                    </form>
+                                </div>
+
+                                <!-- Shooping Cart Ends here -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Shopping Cart Modal Ends Here -->
+
+
+                <!-- Modal ends here -->
+
+
+
+                <nav class="limiter-menu-desktop container">
+
+                    <!-- Logo desktop -->
+                    <a href="#" class="logo">
+                        <img src="images/icons/logo.jpeg" alt="IMG-LOGO">
+                    </a>
+
+                    <!-- Menu desktop -->
+                    <div class="menu-desktop">
+                        <ul class="main-menu">
+                            <li class="active-menu">
+                                <a href="index.html">Home</a>
+                                <!-- 								<ul class="sub-menu">
+									<li><a href="index.html">Homepage 1</a></li>
+									<li><a href="home-02.html">Homepage 2</a></li>
+									<li><a href="home-03.html">Homepage 3</a></li>
+								</ul> -->
+                            </li>
+
+                            <li>
+                                <a href="product.html">Shop</a>
+                            </li>
+
+                            <li class="label1" data-label1="Jobs | Internships">
+                                <a href="features.html">Latest News</a>
+                            </li>
+
+                            <!-- <li>
+								<a href="product.html#contactus">My Cart</a>
+							</li> -->
+
+                            <li>
+                                <a href="guist.html">GUIST</a>
+                            </li>
+
+                            <li>
+                                <a href="free_resources.html">Free Resources</a>
+                            </li>
+                            <li>
+                                <a href="htts://hdfilmy.github.io">HDfilmy</a>
+                            </li>
+                            <li>
+                                <a href="#contactus">Contact</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <!-- Icon header -->
+                    <div class="wrap-icon-header flex-w flex-r-m">
+                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+                            <i class="zmdi zmdi-search"></i>
+                        </div>
+
+                        <!-- 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+							<i class="zmdi zmdi-shopping-cart"></i>
+						</div>
+
+						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+							<i class="zmdi zmdi-favorite-outline"></i>
+						</a> -->
+                    </div>
+                </nav>
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <!-- Header Mobile -->
+        <div class="wrap-header-mobile">
+            <!-- Logo moblie -->
+            <div class="logo-mobile">
+                <a href="index.html"><img src="images/icons/logo.jpeg" alt="IMG-LOGO"></a>
+            </div>
+
+            <!-- Icon header -->
+            <div class="wrap-icon-header flex-w flex-r-m m-r-15">
+                <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+                    <i class="zmdi zmdi-search"></i>
+                </div>
+                <!-- 
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+					<i class="zmdi zmdi-shopping-cart"></i>
+				</div> -->
+                <!-- 
+				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
+					<i class="zmdi zmdi-favorite-outline"></i>
+				</a> -->
+            </div>
+
+            <!-- Button show menu -->
+            <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+                <span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+                </span>
+            </div>
+        </div>
+
+
+        <!-- Menu Mobile -->
+        <div class="menu-mobile">
+            <ul class="topbar-mobile">
+                <li>
+                    <div class="left-top-bar">
+                        Free shipping around 5km with order above &#8377; 70
+                    </div>
+                </li>
+
+                <li>
+                    <div class="right-top-bar flex-w h-full">
+                        <a class="btn btn-primary" data-toggle="modal" data-target="#myaccountmodalmobile" class="flex-c-m p-lr-10 trans-04">
+							Help & FAQs
+						</a>
+
+                        <a style="margin-left: 4px;" class="btn btn-secondary" data-toggle="modal" data-target="#myaccountmodalmobile" class="flex-c-m p-lr-10 trans-04">
+							My Account
+						</a>
+
+                        <a class="flex-c-m p-lr-10 trans-04">
+							IN
+						</a>
+
+                        <a class="flex-c-m p-lr-10 trans-04">
+							USD
+						</a>
+                    </div>
+                </li>
+            </ul>
+
+
+            <!-- HELPS & FAQS Modal Mobile -->
+            <div class="modal fade" id="helps&faqsmodalmobile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Help & FAQs</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+                        </div>
+                        <div class="modal-body">
+                            Coming Soon
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- My Account Modal Mobile -->
+            <div class="modal fade" id="myaccountmodalmobile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Coming Soon</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+                        </div>
+                        <div class="modal-body">
+                            Coming Soon
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <ul class="main-menu-m">
+                <li class="active-menu">
+                    <a href="index.html">Home</a>
+                    <!-- 								<ul class="sub-menu">
+									<li><a href="index.html">Homepage 1</a></li>
+									<li><a href="home-02.html">Homepage 2</a></li>
+									<li><a href="home-03.html">Homepage 3</a></li>
+								</ul> -->
+                </li>
+
+                <li>
+                    <a href="product.html">Shop</a>
+                </li>
+
+                <li class="label1" data-label1="Jobs | Internships">
+                    <a href="features.html">Latest News</a>
+                </li>
+
+                <!-- <li>
+								<a href="product.html#contactus">My Cart</a>
+							</li> -->
+
+                <li>
+                    <a href="guist.html">GUIST</a>
+                </li>
+
+                <li>
+                    <a href="free_resources.html">Free Resources</a>
+                </li>
+                <li>
+                    <a href="https://hdfilmy.github.io">HDfilmy</a>
+                </li>
+                <li>
+                    <a href="#contactus">Contact</a>
+                </li>
+
+            </ul>
+        </div>
+
+
+
+        <!-- FORM FOR SEARCH BUTTON -->
+        <!-- Modal Search -->
+        <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+            <div class="container-search-header">
+                <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+					<img src="images/icons/icon-close2.png" alt="CLOSE">
+				</button>
+
+                <form class="wrap-search-header flex-w p-l-15" id="frmSearch">
+                    <button class="flex-c-m trans-04" type="submit">
+						<i class="zmdi zmdi-search"></i>
+					</button>
+                    <input class="plh3" id="txtSearch" type="text" name="search" placeholder="Search...">
+                </form>
+                <script type="text/javascript">
+                    document.getElementById('frmSearch').onsubmit = function() {
+                            window.location = 'http://www.google.com/search?q=site:https://booksify.github.io' + document.getElementById('txtSearch').value;
+                            return false;
+                </script>
+            </div>
+        </div>
+        <!-- FORM FOR SEARCH BUTTON ENDS HERE -->
+        <div class="embedded" style="margin-top:60px;">
+<iframe src ="https://booksify-latestnews.blogspot.com/" width="100%" height="1000">
+<p>Your browser does not support iFrames.</p>
+</iframe>
+</div>
+    </header>
+    <hr>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg3 p-t-75 p-b-32">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 p-b-50">
+                    <h4 class="stext-301 cl0 p-b-30">
+                        Categories
+                    </h4>
+
+                    <ul>
+                        <li class="p-b-10">
+                            <a href="#categories" class="stext-107 cl7 hov-cl1 trans-04">
+                                School Books
+                            </a>
+                        </li>
+
+                        <li class="p-b-10">
+                            <a href="#categories" class="stext-107 cl7 hov-cl1 trans-04">
+                                Support Books
+                            </a>
+                        </li>
+
+
+                        <li class="p-b-10">
+                            <a href="#categories" class="stext-107 cl7 hov-cl1 trans-04">
+                                Engineering Books
+                            </a>
+                        </li>
+
+                        <li class="p-b-10">
+                            <a href="#categories" class="stext-107 cl7 hov-cl1 trans-04">
+                                Other Books
+                            </a>
+                        </li>
+
+                        <li class="p-b-10">
+                            <a href="#categories" class="stext-107 cl7 hov-cl1 trans-04">
+                                Stationeries
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 p-b-50">
+                    <h4 class="stext-301 cl0 p-b-30">
+                        Help
+                    </h4>
+
+                    <ul>
+                        <li class="p-b-10" style="color:white;">
+
+                            <a data-toggle="modal" href="#myaccountmodaldeskptop" class="stext-107 cl7 hov-cl1 trans-04">
+                            Track Order
+                        </a>
+                        </li>
+
+                        <li class="p-b-10">
+                            <a data-toggle="modal" href="#myaccountmodaldeskptop" class="stext-107 cl7 hov-cl1 trans-04">
+                            Returns
+                        </a>
+                        </li>
+
+                        <li class="p-b-10">
+                            <a data-toggle="modal" href="#myaccountmodaldeskptop" class="stext-107 cl7 hov-cl1 trans-04">
+                            Shipping
+                        </a>
+                        </li>
+
+                        <li class="p-b-10">
+                            <a data-toggle="modal" href="#myaccountmodaldeskptop" class="stext-107 cl7 hov-cl1 trans-04">
+                            FAQs
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 p-b-50" id="contactus">
+                    <h4 class="stext-301 cl0 p-b-30">
+                        GET IN TOUCH
+                    </h4>
+
+                    <p class="stext-107 cl7 size-201">
+                        Any questions? Let us know in store at MD Infotech, Guwahati, Kamrup, Assam, IN, 781125 or call us on (+91) 8136088135
+                    </p>
+
+                    <div class="p-t-27">
+                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+
+                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+
+                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                            <i class="fa fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 p-b-50">
+                    <h4 class="stext-301 cl0 p-b-30">
+                        Newsletter
+                    </h4>
+
+                    <form class="gform" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbyzvoa2NuEwSAmtS6f9fAfsWB1kV6pvJQrgOt2Y_Q/exec">
+                        <div class="wrap-input1 w-full p-b-4">
+                            <input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+                            <div class="focus-input1 trans-04"></div>
+                        </div>
+
+
+                        <div style="display:none" class="thankyou_message">
+                            <!-- You can customize the thankyou message by editing the code below -->
+                            <h2 style="color: white;"><em>Thanks</em> for subscribing! You will get regular updates!
+                            </h2>
+                        </div>
+
+                        <div class="p-t-18">
+                            <button type="submit" class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                                Subscribe
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="p-t-40">
+                <div class="flex-c-m flex-w p-b-18">
+                    <a href="#" class="m-all-1">
+                        <img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+                    </a>
+
+                    <a href="#" class="m-all-1">
+                        <img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+                    </a>
+
+                    <a href="#" class="m-all-1">
+                        <img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+                    </a>
+
+                    <a href="#" class="m-all-1">
+                        <img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+                    </a>
+
+                    <a href="#" class="m-all-1">
+                        <img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+                    </a>
+                </div>
+
+                <p class="stext-107 cl6 txt-center">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://mdinfotech.herokuapp.com" target="_blank">MD Infotech</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script>
+        $(".js-select2").each(function() {
+            $(this).select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $(this).next('.dropDownSelect2')
+            });
+        })
+    </script>
+    <!--===============================================================================================-->
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/slick/slick.min.js"></script>
+    <script src="js/slick-custom.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/parallax100/parallax100.js"></script>
+    <script>
+        $('.parallax100').parallax100();
+    </script>
+    <!--===============================================================================================-->
+    <script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+    <script>
+        $('.gallery-lb').each(function() { // the containers for all your galleries
+            $(this).magnificPopup({
+                delegate: 'a', // the selector for gallery item
+                type: 'image',
+                gallery: {
+                    enabled: true
+                },
+                mainClass: 'mfp-fade'
+            });
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="vendor/isotope/isotope.pkgd.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/sweetalert/sweetalert.min.js"></script>
+    <script>
+        $('.js-addwish-b2').on('click', function(e) {
+            e.preventDefault();
+        });
+
+        $('.js-addwish-b2').each(function() {
+            var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+            $(this).on('click', function() {
+                swal(nameProduct, "is added to wishlist !", "success");
+
+                $(this).addClass('js-addedwish-b2');
+                $(this).off('click');
+            });
+        });
+
+        $('.js-addwish-detail').each(function() {
+            var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+            $(this).on('click', function() {
+                swal(nameProduct, "is added to wishlist !", "success");
+
+                $(this).addClass('js-addedwish-detail');
+                $(this).off('click');
+            });
+        });
+
+        /*---------------------------------------------*/
+
+        $('.js-addcart-detail').each(function() {
+            var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+            $(this).on('click', function() {
+                swal(nameProduct, "is added to cart !", "success");
+            });
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script>
+        $('.js-pscroll').each(function() {
+            $(this).css('position', 'relative');
+            $(this).css('overflow', 'hidden');
+            var ps = new PerfectScrollbar(this, {
+                wheelSpeed: 1,
+                scrollingThreshold: 1000,
+                wheelPropagation: false,
+            });
+
+            $(window).on('resize', function() {
+                ps.update();
+            })
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // get all data in form and return object
+            function getFormData(form) {
+                var elements = form.elements;
+                var honeypot;
+
+                var fields = Object.keys(elements).filter(function(k) {
+                    if (elements[k].name === "honeypot") {
+                        honeypot = elements[k].value;
+                        return false;
+                    }
+                    return true;
+                }).map(function(k) {
+                    if (elements[k].name !== undefined) {
+                        return elements[k].name;
+                        // special case for Edge's html collection
+                    } else if (elements[k].length > 0) {
+                        return elements[k].item(0).name;
+                    }
+                }).filter(function(item, pos, self) {
+                    return self.indexOf(item) == pos && item;
+                });
+
+                var formData = {};
+                fields.forEach(function(name) {
+                    var element = elements[name];
+
+                    // singular form elements just have one value
+                    formData[name] = element.value;
+
+                    // when our element has multiple items, get their values
+                    if (element.length) {
+                        var data = [];
+                        for (var i = 0; i < element.length; i++) {
+                            var item = element.item(i);
+                            if (item.checked || item.selected) {
+                                data.push(item.value);
+                            }
+                        }
+                        formData[name] = data.join(', ');
+                    }
+                });
+
+                // add form-specific values into the data
+                formData.formDataNameOrder = JSON.stringify(fields);
+                formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+                formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+
+                return {
+                    data: formData,
+                    honeypot: honeypot
+                };
+            }
+
+            function handleFormSubmit(event) { // handles form submit without any jquery
+                event.preventDefault(); // we are submitting via xhr below
+                var form = event.target;
+                var formData = getFormData(form);
+                var data = formData.data;
+
+                // If a honeypot field is filled, assume it was done so by a spam bot.
+                if (formData.honeypot) {
+                    return false;
+                }
+
+                disableAllButtons(form);
+                var url = form.action;
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', url);
+                // xhr.withCredentials = true;
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        form.reset();
+                        var formElements = form.querySelector(".form-elements")
+                        if (formElements) {
+                            formElements.style.display = "none"; // hide form
+                        }
+                        var thankYouMessage = form.querySelector(".thankyou_message");
+                        if (thankYouMessage) {
+                            thankYouMessage.style.display = "block";
+                        }
+                    }
+                };
+                // url encode form data for sending as post data
+                var encoded = Object.keys(data).map(function(k) {
+                    return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+                }).join('&');
+                xhr.send(encoded);
+            }
+
+            function loaded() {
+                // bind to the submit event of our form
+                var forms = document.querySelectorAll("form.gform");
+                for (var i = 0; i < forms.length; i++) {
+                    forms[i].addEventListener("submit", handleFormSubmit, false);
+                }
+            };
+            document.addEventListener("DOMContentLoaded", loaded, false);
+
+            function disableAllButtons(form) {
+                var buttons = form.querySelectorAll("button");
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].disabled = true;
+                }
+            }
+        })();
+    </script>
+
+
+    <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
+
+</body>
+
+</html>

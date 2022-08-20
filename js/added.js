@@ -192,4 +192,8 @@ function orderconfirmed(){
     alert("Your order has been succesfully placed. Product will be shipped within 24 hours.");
 
 }
+function ebookconfirm(){
+    alert("Click OK to generate download link");
+
+}
 

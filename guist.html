@@ -5,6 +5,8 @@
     <title>GUIST</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Satisfy|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="images/icons/favicon.png" />
     <!--===============================================================================================-->
@@ -747,6 +749,7 @@
 
         <div class="container">
             <hr>
+           
 
             <div class="flex-w flex-sb-m p-b-52">
                 <div class="flex-w flex-l-m filter-tope-group m-tb-10">
@@ -803,6 +806,17 @@
                             <hr>
                         </div>
                     </div>
+                    <div class="dropdown">
+                        <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 " data-filter=".labmanuals">
+                       Lab Manuals</button>
+                        <div class="dropdown-content">
+                            <hr>
+                            <li><button data-filter=".labmanualscopies">Hardcopies</button></li>
+                            <hr>
+                            <li><button data-filter=".labmanualspdf"> E-Books (PDF)</button></li>
+                            <hr>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -826,7 +840,186 @@
             </div>
 
 
+
+
+             <div id="assignmentbanner">
+            <a href="#assignmentmodal">
+                <div id="assignmenttarget"></div>
+                <img id="assignmentproduct" src="images/engineering_banner1.jpg">
+                <div id="assignmentbadge">Get it Solved</div>
+                <div id="assignmentsale">
+                    <span id="assignmentsale-text">Get your Assignments Questions Answered by our Experts within 48 hours at just ₹ 48 only</span><br/>
+                    <button id="assignmentbutton" data-target="#assignmentmodal" data-toggle="modal">Ask Now (Click Here)</button>
+                </div>
+            </a>
+        </div>
+
+
+        <!-- modal for ask questions -->
+
+        <div class="modal fade" id="assignmentmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Assignment Form</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <form name="AssignmentForm" class="gform" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycby4dWGN_ceqTpf7KxtTX5uEtPwWGtYiUzIQ-txR/exec">
+
+                                 <div class="form-group">
+    <label for="paymentqr"><b>Payment QR/UPI</b></label>
+    <label> (Scan the QR Code below to pay and attach the payment screenshot in the form below)</label>
+    <img src="images/paymentqr.jpg" id="paymentqr" width="50%" height="50%">
+  </div>
+                            <div class="form-group">
+    <label for="name">Name<span style="color:red">*</span></label>
+    <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name here" required>
+  </div>
+
+  <div class="form-group">
+    <label for="contact">Contact Number<span style="color:red">*</span></label>
+    <input type="number" class="form-control" name="contact" id="contact" placeholder="Enter your whatsapp number here" required maxlength="10" minlength="10">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email Id<span style="color:red">*</span></label>
+    <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email id here" required>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Select your Branch<span style="color:red">*</span></label>
+    <select class="form-control" id="exampleFormControlSelect1" name="branch">
+      <option>Select</option>
+      <option>Biotechnology</option>
+      <option>Computer Science</option>
+      <option>Electronics and Communication Technology</option>
+      <option>Information Technology</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Write down or copy-paste Your Assignment here<span style="color:red">*</span></label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="assignmentdetails" required></textarea>
+  </div>
+<div class="form-group">
+ <!-- For file upload -->
+ <label for="assignmentupload">Upload Assignment Image if Required (Max File Size- 50MB)</label>
+         <embed id="assignmentupload" type="text/html" src="fileupload.html" width="400px" height="50px">
+ </div><hr><label >Upload Payment Screenshot<span style="color:red">*</span></label>
+  <div class="form-group">
+    <!-- For PaymentProof Upload -->
+     
+        <embed id="paymentupload" type="text/html" src="paymentscreenshot.html" width="400px" height="50px">
+ </div>
+                                
+                          </div>
+                          <div class="modal-footer">
+                         <button type="submit" class="btn btn-primary" onclick="assignment()">Submit </button>
+                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                 </div>
+                 </form>
+                </div>
+                </div>
+            </div>
+
+
+        <!-- ============================================================================ -->
+
+
+
             <hr>
+
+            <!-- Ebook order form pop up  =======================================================-->
+
+            <div class="modal fade" id="ebookcartmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" style="background-color: whitesmoke;">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">E-Book Order Form</h5>
+                            <hr>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                        </div>
+                        <div class="modal-body">
+                            <!--  Shopping cart table wrapper  -->
+                            <div id="ebookshopping-cart">
+                                <div class="txt-heading">
+                                    <h1>E-Book Cart</h1>
+                                </div>
+                                <button onClick="emptyebookCart()" id="btnEmpty" class="btn btn-primary">Delete Order</button>
+                                <form name="ShoppingList" class="gform" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbyzvoa2NuEwSAmtS6f9fAfsWB1kV6pvJQrgOt2Y_Q/exec">
+
+                                    <table class="tbl-cart" cellpadding="10" cellspacing="1">
+                                        <thead>
+                                            <tr>
+                                                <th> E-Book Name </th>
+
+                                            </tr>
+                                        </thead>
+                                        <!--  Cart table to load data on "add to cart" action -->
+                                        <tbody id="ebookcartTableBody">
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                    <hr>
+                                    <div class="userdetails">
+                                        <h2>Enter your Details</h2>
+                                        <hr>
+                                        <textarea name="orderedproductsdetails" id="ebookname" rows="4" cols="50"></textarea>
+                                        <hr>
+                                        <label for="name">Name:</label><br>
+                                        <input type="text" name="name" placeholder="Enter your name here"style="background-color:lightgray; color: black;" ><br>
+                                        <label for="contact">Contact Number:</label><br>
+                                        <input type="number" name="contact"style="background-color:lightgray; color: black;" placeholder="Enter your 10 digit mobile number here" required maxlength="10" minlength="10"><br>
+                                        <label for="contact">Email Address:</label><br>
+                                        <input type="email" style="background-color:lightgray; color: black;" name="email" placeholder="Enter your email address to recieve the pdf" required>
+                                    </div>
+
+                            
+
+                            <!-- Shooping Cart Ends here -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" onclick="ebookorderconfirmed()">Order</button>
+
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                        </form></div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Ebook order form ends here ======================================================-->
 
 
 
@@ -847,111 +1040,423 @@
                             <div class="block2-txt flex-w flex-t p-t-14">
                                 <div class="block2-txt-child1 flex-col-l ">
                                     <a href="guist.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                        <div class="productname" style="color:black; font-weight:bold;">
-                                            Principles of Microbiology by R.S. Mehrotra</div>
+                                        <div class="productname" id="bookname" style="color:black; font-weight:bold;">
+                                            <span>Principles of Microbiology by R.S. Mehrotra<span></div>
                                     </a>
 
                                     <span class="stext-105 cl3">
-									<div class="strikedprice">M.R.P<b> &#8377; <span>800</span></b>
+									<div class="strikedprice">M.R.P<b> &#8377; <span>895</span></b>
+                                        </div>
+                                        <div class="books">
+                                            <label class="label1" data-label1="Free">
+                                            <button class="btn btn-primary openorder" type="submit" data-target="#ebookcartmodal" data-toggle="modal" onclick="addToebookCart(this)">Download pdf</button></label>
+
+
+                                            <div class="usedbooks" class="oldprice">Used Book: (Out of Stock)
+                                                <b style="color:red;">&#8377; <span>560</span></b>
+                                            </div>
+                                            <div class="newbooks">New Book:(Out of Stock)
+                                                <b style="color:red;">&#8377; <span>700</span></b>
+                                            </div>
+                                        </div>
+                                        </span>
+
                                 </div>
-                                <div class="books">
-                                    <div class="ebooks">
-                                       <a href="#">  <button class="btn btn-primary ebook" onclick="ebookconfirm()" >Download E-book</button></a>
-                                    </div>
-                                    <div class="usedbooks" class="oldprice">Used Book:
-                                        <b style="color:red;">&#8377; <span>70</span></b>
-                                    </div>
-                                    <div class="newbooks">New Book:
-                                        <b style="color:red;">&#8377; <span>500</span></b>
-                                    </div>
-                                </div>
-                                </span>
-
-                            </div>
-                            <div class="cart-action">
-                                <p>Specify the number of copies &downarrow;</p>
-                                <label for="product-quantity">New books quantity</label>
-                                <input type="text" class="product-quantity" name="quantity" value="0" size="2" style="text-align:center; min-width:10px;">
-                                <label for="oldproduct-quantity">Old books quantity</label>
-                                <input type="text" class="oldproduct-quantity" name="oldquantity" value="0" size="2" style="text-align:center; min-width:10px;">
-                                <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
-										Add to cart
-										</button> 
-
-                            </div>
-
-
-
-                            <div class="block2-txt-child2 flex-r p-t-3">
-                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                    <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-                                    <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item biotechnology class12">
-                <!-- Block2 -->
-                <div class="block2">
-                    <div class="block2-pic hov-img0">
-                        <img src="images/12_maths-1.jpg" alt="IMG-PRODUCT">
-
-                        <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Download E-book
-							</a>
-                    </div>
-                    <div class="product-item">
-                        <div class="block2-txt flex-w flex-t p-t-14">
-                            <div class="block2-txt-child1 flex-col-l ">
-                                <a href="guist.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                    <div class="productname">
-                                        Class 12 Mathematics Part-I</div>
-                                </a>
-
-
-                                <span class="stext-105 cl3">
-									<div class="strikedprice">M.R.P<b> &#8377; <span>800</span></b>
-                            </div>
-                            <div class="books">
-                                <div class="usedbooks" class="oldprice">Used Book:
-                                    <b style="color:red;">&#8377; <span>70</span></b>
-                                </div>
-                                <div class="newbooks">New Book:
-                                    <b style="color:red;">&#8377; <span>500</span></b>
-                                </div>
-                            </div>
-                            </span>
-
-                        </div>
-                        <div class="cart-action">
-                            <p>Specify the number of copies &downarrow;</p>
-                            <label for="product-quantity">New books quantity</label>
-                            <input type="text" class="product-quantity" name="quantity" value="0" size="2" style="text-align:center; min-width:10px;">
-                            <label for="oldproduct-quantity">Old books quantity</label>
-                            <input type="text" class="oldproduct-quantity" name="oldquantity" value="0" size="2" style="text-align:center; min-width:10px;">
-                            <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+                                <div class="cart-action">
+                                    <p>Specify the number of copies &downarrow;</p>
+                                    <label for="product-quantity">New books quantity</label>
+                                    <input type="text" class="product-quantity" name="quantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <label for="oldproduct-quantity">Old books quantity</label>
+                                    <input type="text" class="oldproduct-quantity" name="oldquantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
 										Add to cart
 										</button>
-                        </div>
 
-                        <div class="block2-txt-child2 flex-r p-t-3">
-                            <a href="" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-                                <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-                            </a>
+                                </div>
+
+
+
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+                                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item biotechnology betebooks">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="images/biotech_biochemistry_reginald.webp" alt="IMG-PRODUCT">
 
-       
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+                        <div class="product-item">
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <a href="guist.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                        <div class="productname" id="bookname" style="color:black; font-weight:bold;">
+                                            <span>Biochemistry 6th Edition by Reginald Garet<span></div>
+                                    </a>
+
+                                    <span class="stext-105 cl3">
+                                    <div class="strikedprice">M.R.P<b> &#8377; <span>8448</span></b>
+                                        </div>
+                                        <div class="books">
+                                            <label class="label1" data-label1="Free">
+                                            <button class="btn btn-primary openorder" type="submit" data-target="#ebookcartmodal" data-toggle="modal" onclick="addToebookCart(this)">Download pdf</button></label>
 
 
-       
+                                            <div class="usedbooks" class="oldprice">Used Book: (Not Available)
+                                                <b style="color:red;">&#8377; <span>0</span></b>
+                                            </div>
+                                            <div class="newbooks">New Book: (Out of Stock)
+                                                <b style="color:red;">&#8377; <span>8200</span></b>
+                                            </div>
+                                        </div>
+                                        </span>
+
+                                </div>
+                                <div class="cart-action">
+                                    <p>Specify the number of copies &downarrow;</p>
+                                    <label for="product-quantity">New books quantity</label>
+                                    <input type="text" class="product-quantity" name="quantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <label for="oldproduct-quantity">Old books quantity</label>
+                                    <input type="text" class="oldproduct-quantity" name="oldquantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+                                        Add to cart
+                                        </button>
+
+                                </div>
+
+
+
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+                                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item biotechnology betbooks betebooks">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="images/biotech_biochemical_calculations_hsegel.webp" alt="IMG-PRODUCT">
+
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+                        <div class="product-item">
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <a href="guist.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                        <div class="productname" id="bookname" style="color:black; font-weight:bold;">
+                                            <span>Biochemical Calculations- <i>How to Solve Mathematical Problems in General Biochemistry</i>2nd Edition by Irwin H. Segel <span></div>
+                                    </a>
+
+                                    <span class="stext-105 cl3">
+                                    <div class="strikedprice">M.R.P<b> &#8377; <span>616</span></b>
+                                        </div>
+                                        <div class="books">
+                                            <label class="label1" data-label1="Free">
+                                            <button class="btn btn-primary openorder" type="submit" data-target="#ebookcartmodal" data-toggle="modal" onclick="addToebookCart(this)">Download pdf</button></label>
+
+
+                                            <div class="usedbooks" class="oldprice">Used Book: (Not Available)
+                                                <b style="color:red;">&#8377; <span>0</span></b>
+                                            </div>
+                                            <div class="newbooks">New Book: (Out of Stock)
+                                                <b style="color:red;">&#8377; <span>600</span></b>
+                                            </div>
+                                        </div>
+                                        </span>
+
+                                </div>
+                                <div class="cart-action">
+                                    <p>Specify the number of copies &downarrow;</p>
+                                    <label for="product-quantity">New books quantity</label>
+                                    <input type="text" class="product-quantity" name="quantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <label for="oldproduct-quantity">Old books quantity</label>
+                                    <input type="text" class="oldproduct-quantity" name="oldquantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+                                        Add to cart
+                                        </button>
+
+                                </div>
+
+
+
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+                                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item biotechnology betbooks betebooks">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="images/biotech_biochemistry_protein_notes.jpg" alt="IMG-PRODUCT">
+
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+                        <div class="product-item">
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <a href="guist.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                        <div class="productname" id="bookname" style="color:black; font-weight:bold;">
+                                            <span>Biochemistry Notes- <u>PROTEINS</u>- <i>Curated Study Material for GATE</i> <span></div>
+                                    </a>
+
+                                    <span class="stext-105 cl3">
+                                    <div class="strikedprice">M.R.P<b> &#8377; <span>200</span></b>
+                                        </div>
+                                        <div class="books">
+                                            <label class="label1" data-label1="Free">
+                                            <button class="btn btn-primary openorder" type="submit" data-target="#ebookcartmodal" data-toggle="modal" onclick="addToebookCart(this)">Download pdf</button></label>
+
+
+                                            <div class="usedbooks" class="oldprice">Used Book: (Not Applicable)
+                                                <b style="color:red;">&#8377; <span>0</span></b>
+                                            </div>
+                                            <div class="newbooks">New Book: 
+                                                <b style="color:red;">&#8377; <span>150</span></b>
+                                            </div>
+                                        </div>
+                                        </span>
+
+                                </div>
+                                <div class="cart-action">
+                                    <p>Specify the number of copies &downarrow;</p>
+                                    <label for="product-quantity">New books quantity</label>
+                                    <input type="text" class="product-quantity" name="quantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <label for="oldproduct-quantity">Old books quantity</label>
+                                    <input type="text" class="oldproduct-quantity" name="oldquantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+                                        Add to cart
+                                        </button>
+
+                                </div>
+
+
+
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+                                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item biotechnology electronics ecebooks ecebooks">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="images/electronics_electronic_devices_and_circuit_thoery_boylestad.jpg" alt="IMG-PRODUCT">
+
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+                        <div class="product-item">
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <a href="guist.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                        <div class="productname" id="bookname" style="color:black; font-weight:bold;">
+                                            <span>Electronic Devices and Circuit Theory- By Robert Boylestad <span></div>
+                                    </a>
+
+                                    <span class="stext-105 cl3">
+                                    <div class="strikedprice">M.R.P<b> &#8377; <span>950</span></b>
+                                        </div>
+                                        <div class="books">
+                                            <label class="label1" data-label1="Free">
+                                            <button class="btn btn-primary openorder" type="submit" data-target="#ebookcartmodal" data-toggle="modal" onclick="addToebookCart(this)">Download pdf</button></label>
+
+
+                                            <div class="usedbooks" class="oldprice">Used Book: (Not Available)
+                                                <b style="color:red;">&#8377; <span>0</span></b>
+                                            </div>
+                                            <div class="newbooks">New Book: 
+                                                <b style="color:red;">&#8377; <span>850</span></b>
+                                            </div>
+                                        </div>
+                                        </span>
+
+                                </div>
+                                <div class="cart-action">
+                                    <p>Specify the number of copies &downarrow;</p>
+                                    <label for="product-quantity">New books quantity</label>
+                                    <input type="text" class="product-quantity" name="quantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <label for="oldproduct-quantity">Old books quantity</label>
+                                    <input type="text" class="oldproduct-quantity" name="oldquantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+                                        Add to cart
+                                        </button>
+
+                                </div>
+
+
+
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+                                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item biotechnology betbooks betebooks">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="images/biotech_microbio_prescott.jpg" alt="IMG-PRODUCT">
+
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+                        <div class="product-item">
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <a href="guist.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                        <div class="productname" id="bookname" style="color:black; font-weight:bold;">
+                                            <span>Prescott, Harley and Klein's Microbiology Seventh Edition - By Joanne M.Willey| Linda M.Sherwood | Christopher J. Woolverton <span></div>
+                                    </a>
+
+                                    <span class="stext-105 cl3">
+                                    <div class="strikedprice">M.R.P<b> &#8377; <span>8401</span></b>
+                                        </div>
+                                        <div class="books">
+                                            <label class="label1" data-label1="Free">
+                                            <button class="btn btn-primary openorder" type="submit" data-target="#ebookcartmodal" data-toggle="modal" onclick="addToebookCart(this)">Download pdf</button></label>
+
+
+                                            <div class="usedbooks" class="oldprice">Used Book: (Not Available)
+                                                <b style="color:red;">&#8377; <span>0</span></b>
+                                            </div>
+                                            <div class="newbooks">New Book: (Out of Stock) 
+                                                <b style="color:red;">&#8377; <span>8401</span></b>
+                                            </div>
+                                        </div>
+                                        </span>
+
+                                </div>
+                                <div class="cart-action">
+                                    <p>Specify the number of copies &downarrow;</p>
+                                    <label for="product-quantity">New books quantity</label>
+                                    <input type="text" class="product-quantity" name="quantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <label for="oldproduct-quantity">Old books quantity</label>
+                                    <input type="text" class="oldproduct-quantity" name="oldquantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+                                        Add to cart
+                                        </button>
+
+                                </div>
+
+
+
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+                                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item biotechnology electronics ecebooks ecebooks">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="images/electricalnetworks_ravishrsingh.jpg" alt="IMG-PRODUCT">
+
+                            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                                Quick View
+                            </a>
+                        </div>
+                        <div class="product-item">
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <a href="guist.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                        <div class="productname" id="bookname" style="color:black; font-weight:bold;">
+                                            <span>Electrical Networks by Ravish R. Singh<span></div>
+                                    </a>
+
+                                    <span class="stext-105 cl3">
+                                    <div class="strikedprice">M.R.P<b> &#8377; <span>1999</span></b>
+                                        </div>
+                                        <div class="books">
+                                            <label class="label1" data-label1="Free">
+                                            <button class="btn btn-primary openorder" type="submit" data-target="#ebookcartmodal" data-toggle="modal" onclick="addToebookCart(this)">Download pdf</button></label>
+
+
+                                            <div class="usedbooks" class="oldprice">Used Book:
+                                                <b style="color:red;">&#8377; <span>599</span></b>
+                                            </div>
+                                            <div class="newbooks">New Book: 
+                                                <b style="color:red;">&#8377; <span>888</span></b>
+                                            </div>
+                                        </div>
+                                        </span>
+
+                                </div>
+                                <div class="cart-action">
+                                    <p>Specify the number of copies &downarrow;</p>
+                                    <label for="product-quantity">New books quantity</label>
+                                    <input type="text" class="product-quantity" name="quantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <label for="oldproduct-quantity">Old books quantity</label>
+                                    <input type="text" class="oldproduct-quantity" name="oldquantity" value="0" size="2" style="text-align:center; min-width:10px;">
+                                    <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit" onClick="addToCart(this)" data-target="#shoppingcartmodal" data-toggle="modal">
+                                        Add to cart
+                                        </button>
+
+                                </div>
+
+
+
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+                                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+
+
+
+
 
 
         </div>
@@ -1362,6 +1867,7 @@
     <script type="text/javascript">
         document.getElementById("orderedproductdetails").style.display = "none";
         document.getElementById("price").style.display = "none";
+        document.getElementById("ebookname").style.display = "none";
     </script>
 
     <!-- jQuery -->
@@ -1374,6 +1880,7 @@
             $(".custom-model-main").removeClass('model-open');
         });
     </script>
+
 
 </body>
 

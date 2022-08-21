@@ -1,49 +1,47 @@
-
- function showusedbooks() {
-  
- 
+function showusedbooks() {
 
 
-       
-var usedbooks=document.getElementsByClassName('usedbooks');
-var newbooks=document.getElementsByClassName('newbooks')
-var usedbooksid=usedbooks.length;
-var newbooksid=newbooks.length;
 
-for (var i=0; i<usedbooksid;i++){
-    usedbooks[i].style.display='block';
+
+
+    var usedbooks = document.getElementsByClassName('usedbooks');
+    var newbooks = document.getElementsByClassName('newbooks')
+    var usedbooksid = usedbooks.length;
+    var newbooksid = newbooks.length;
+
+    for (var i = 0; i < usedbooksid; i++) {
+        usedbooks[i].style.display = 'block';
+    }
+    for (var i = 0; i < newbooksid; i++) {
+        newbooks[i].style.display = 'none';
+    }
 }
-for(var i=0; i<newbooksid;i++){
-    newbooks[i].style.display='none';
-}
-}
 
- function shownewbooks() {
-  
- 
+function shownewbooks() {
 
 
-       
-var usedbooks=document.getElementsByClassName('usedbooks');
-var newbooks=document.getElementsByClassName('newbooks')
-var usedbooksid=usedbooks.length;
-var newbooksid=newbooks.length;
 
-for (var i=0; i<usedbooksid;i++){
-    usedbooks[i].style.display='none';
-}
-for(var i=0; i<newbooksid;i++){
-    newbooks[i].style.display='block';
-}
+
+
+    var usedbooks = document.getElementsByClassName('usedbooks');
+    var newbooks = document.getElementsByClassName('newbooks')
+    var usedbooksid = usedbooks.length;
+    var newbooksid = newbooks.length;
+
+    for (var i = 0; i < usedbooksid; i++) {
+        usedbooks[i].style.display = 'none';
+    }
+    for (var i = 0; i < newbooksid; i++) {
+        newbooks[i].style.display = 'block';
+    }
 }
 
 // ================================================
-        // Cart Javascript Client Side 
+// Cart Javascript Client Side 
 
-        // ===========================================
- $(document).ready(function() {
-    var productItem = [
-        {
+// ===========================================
+$(document).ready(function() {
+    var productItem = [{
             productName: "EXP Portable Hard Drive",
             price: "800.00",
             photo: "external-hard-drive.jpg"
@@ -57,7 +55,8 @@ for(var i=0; i<newbooksid;i++){
             productName: "XP 1155 Intel Core Laptop",
             price: "1000.00",
             photo: "watch.jpg"
-        }];
+        }
+    ];
     showProductGallery(productItem);
     showCartTable();
 });
@@ -70,7 +69,7 @@ function addToCart(element) {
 
     var oldprice = $(productParent).find('.usedbooks span').text();
 
-    
+
     var productName = $(productParent).find('.productname').text();
     var quantity = $(productParent).find('.product-quantity').val();
     var oldquantity = $(productParent).find('.oldproduct-quantity').val();
@@ -128,7 +127,7 @@ function showCartTable() {
 
     if (sessionStorage.getItem('shopping-cart')) {
         var shoppingCart = JSON.parse(sessionStorage.getItem('shopping-cart'));
-        
+
 
         //Iterate javascript shopping cart array
         shoppingCart.forEach(function(item) {
@@ -150,20 +149,21 @@ function showCartTable() {
 
             grandTotal += subTotal;
             var productdetails = "";
-             productdetails +=" ✤"+cartItem.productName+" (" +"New= "+quantity+" ;"+"Old="+ oldquantity+")"+" |";
-         document.getElementById("orderedproductdetails").value += productdetails;
+            productdetails += " ✤" + cartItem.productName + " (" + "New= " + quantity + " ;" + "Old=" + oldquantity + ")" + " |";
+            document.getElementById("orderedproductdetails").value += productdetails;
 
         });
-         document.getElementById("price").value = grandTotal;
+        document.getElementById("price").value = grandTotal;
 
-         // document.getElementById("orderedproductname").value = productName;
+
+        // document.getElementById("orderedproductname").value = productName;
 
     }
 
     $('#cartTableBody').html(cartRowHTML);
     $('#itemCount').text(itemCount);
     $('#totalAmount').text("₹" + grandTotal.toFixed(2));
-    
+
 }
 
 
@@ -181,19 +181,125 @@ function showCartTable() {
 //                  '</div>'+
 //              '</div>';
 //              "<tr>";
-        
+
 //  });
 //  $('#product-item-container').html(productHTML);
 // }
 // =================================================================
-// Order confirmation box alert
+//ebook Order confirmation box alert
 // ================================================
-function orderconfirmed(){
-    alert("Your order has been succesfully placed. Product will be shipped within 24 hours.");
+// document.getElementById("ebookorderform").style.display="block";
+
+
+// function openorderform(){
+//     document.getElementById("ebookorderform").style.display="block";
+
+
+// }
+// function closeorderform(){
+//     document.getElementById("ebookorderform").style.display="none";
+// }
+
+
+// ebook cart
+
+// ===========================================
+$(document).ready(function() {
+    var productItem = [{
+            productName: "EXP Portable Hard Drive",
+            price: "800.00",
+            photo: "external-hard-drive.jpg"
+        },
+        {
+            productName: "Luxury Ultra thin Wrist Watch",
+            price: "500.00",
+            photo: "laptop.jpg"
+        },
+        {
+            productName: "XP 1155 Intel Core Laptop",
+            price: "1000.00",
+            photo: "watch.jpg"
+        }
+    ];
+    showProductGallery(productItem);
+    showebookCartTable();
+});
+
+function addToebookCart(element) {
+    var productParent = $(element).closest('div.product-item');
+    var productName = $(productParent).find('.productname').text();
+    var cartItem = {
+        productName: productName,
+
+    };
+    var cartItemJSON = JSON.stringify(cartItem);
+
+    var cartArray = new Array();
+    // If javascript shopping cart session is not empty
+    if (sessionStorage.getItem('ebookshopping-cart')) {
+        cartArray = JSON.parse(sessionStorage.getItem('ebookshopping-cart'));
+    }
+    cartArray.push(cartItemJSON);
+
+    var cartJSON = JSON.stringify(cartArray);
+    sessionStorage.setItem('ebookshopping-cart', cartJSON);
+    showebookCartTable();
+}
+
+function emptyebookCart() {
+    if (sessionStorage.getItem('ebookshopping-cart')) {
+        // Clear JavaScript sessionStorage by index
+        sessionStorage.removeItem('ebookshopping-cart');
+        showebookCartTable();
+        document.getElementById("ebookname").value = " ";
+    }
+}
+
+
+
+function removeebookCartItem(index) {
+    if (sessionStorage.getItem('ebookshopping-cart')) {
+        var shoppingCart = JSON.parse(sessionStorage.getItem('ebookshopping-cart'));
+        sessionStorage.removeItem(ebookshoppingCart[index]);
+        showebookCartTable();
+    }
+}
+
+function showebookCartTable() {
+    var ebookcartRowHTML = "";
+
+
+    if (sessionStorage.getItem('ebookshopping-cart')) {
+        var ebookshoppingCart = JSON.parse(sessionStorage.getItem('ebookshopping-cart'));
+
+
+        //Iterate javascript shopping cart array
+        ebookshoppingCart.forEach(function(item) {
+            var ebookcartItem = JSON.parse(item);
+            ebookcartRowHTML += "<tr>" +
+                "<td>" + ebookcartItem.productName + "</td>" +
+                "</tr>";
+
+            var productdetails = "";
+            productdetails += ebookcartItem.productName + " |";
+            document.getElementById("ebookname").value += productdetails;
+
+        });
+
+
+        // document.getElementById("orderedproductname").value = productName;
+
+    }
+
+    $('#ebookcartTableBody').html(ebookcartRowHTML);
+
 
 }
-function ebookconfirm(){
-    alert("Click OK to generate download link");
+
+function ebookorderconfirmed() {
+    alert("Your order has been placed succesfully.You will receive the ebook within 24 hours at your email-id")
 
 }
-
+function assignment(){
+    alert("You will get the solution to your assignments over email and whatsapp message at your given contact details. ");
+}

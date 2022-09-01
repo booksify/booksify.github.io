@@ -300,6 +300,11 @@ function ebookorderconfirmed() {
     alert("Your order has been placed succesfully.You will receive the ebook within 24 hours at your email-id")
 
 }
+
+function orderconfirmed() {
+    alert("Thank You!! Your order has been placed succesfully.Your book will be delivered to you within 3 days. You will get tracking details and further communications over your email and whatsapp number.")
+
+}
 function assignment(){
     alert("You will get the solution to your assignments over email and whatsapp message at your given contact details. ");
 }

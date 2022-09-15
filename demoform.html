@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EBook Order</title>
+</head>
+<body>
+
+	<form action="https://docs.google.com/forms/d/e/1FAIpQLSewXOwMoPCuJqG8DgT9UTfDpG6TAiY5C07JbAcEZxdPMglO5w/formResponse"
+      target="_self"
+      id="bootstrapForm"
+      method="POST">
+    <fieldset>
+        <h2>EBook Order Details<br><small> ***You will get the ordered E-Book in pdf at your registered email id within 24 hours
+</small></h2>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "151238730" -->
+    <fieldset>
+        <legend for="151238730">Email address</legend>
+        <div class="form-group">
+            <input id="1595950714" type="text" name="entry.1595950714" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "1384373585" -->
+    <fieldset>
+        <legend for="1384373585">First Name</legend>
+        <div class="form-group">
+            <input id="1299959829" type="text" name="entry.1299959829" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "1458653769" -->
+    <fieldset>
+        <legend for="1458653769">Last Name</legend>
+        <div class="form-group">
+            <input id="1477017479" type="text" name="entry.1477017479" class="form-control" >
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "1949887709" -->
+    <fieldset>
+        <legend for="1949887709">Contact Number</legend>
+        <div class="form-group">
+            <input id="1284215457" type="text" name="entry.1284215457" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "dropdown" id: "658809477" -->
+    <fieldset>
+        <legend for="658809477">Book Name</legend>
+        <div class="form-group">
+            <p class="help-block">Confirm the E-Book Name You have added to Cart</p>
+            <select id="658809477" name="entry.1288403082" class="form-control">
+                <option value="Biochemistry 6th Edition by Reginald Garet">Biochemistry 6th Edition by Reginald Garet</option>
+                <option value="Principles of Microbiology by R.S. Mehrotra">Principles of Microbiology by R.S. Mehrotra</option>
+                <option value="Biochemical Calculations 2nd Edition by Irwin H. Segel">Biochemical Calculations 2nd Edition by Irwin H. Segel</option>
+                <option value="Biochemistry Notes  PROTEINS Curated Study Material for GATE">Biochemistry Notes  PROTEINS Curated Study Material for GATE</option>
+                <option value="Prescott, Harley and Kleins Microbiology Seventh Edition">Prescott, Harley and Kleins Microbiology Seventh Edition</option>
+                <option value="Electrical Networks by Ravish R. Singh">Electrical Networks by Ravish R. Singh</option>
+                <option value="Electronic Devices and Circuit Theory- By Robert Boylestad">Electronic Devices and Circuit Theory- By Robert Boylestad</option>
+                <option value="Principles of Biochemistry 4th Edition">Principles of Biochemistry 4th Edition</option>
+                <option value="Biochemistry by Satyanarayana">Biochemistry by Satyanarayana</option>
+            </select>
+        </div>
+    </fieldset>
+
+    <input type="hidden" name="fvv" value="1">
+    <input type="hidden" name="fbzx" value="8220033630219983066">
+    <!--
+        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+    -->
+    <input type="hidden" name="pageHistory" value="0">
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+$('#bootstrapForm').submit(function (event) {
+    event.preventDefault()
+    var extraData = {}
+    $('#bootstrapForm').ajaxSubmit({
+        data: extraData,
+        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+        error: function () {
+            // Submit of form should be successful but JSONP callback will fail because Google Forms
+            // does not support it, so this is handled as a failure.
+            alert('Form Submitted. Thanks.')
+            // You can also redirect the user to a custom thank-you page:
+            // window.location = 'http://www.mydomain.com/thankyoupage.html'
+        }
+    })
+})
+</script>
+</body>
+</html>
